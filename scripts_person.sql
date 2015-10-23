@@ -1,5 +1,9 @@
-DROP TABLE person;
-
+BEGIN
+	EXECUTE IMMEDIATE 'DROP TABLE person';
+  EXCEPTION
+	WHEN OTHERS THEN NULL;
+END;
+/
 CREATE TABLE person (
   per_id number ,
   name varchar2(100) NOT NULL,
