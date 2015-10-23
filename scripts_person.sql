@@ -1,13 +1,12 @@
-DROP TABLE `person`;
+DROP TABLE person;
 
-CREATE TABLE `person` (
-  `id` number primary key,
-  `per_id` number NOT NULL,
-  `name` varchar2(100) NOT NULL,
-  `email` varchar2(100) NOT NULL,
-  `gender` varchar2(10) NOT NULL,
-  PRIMARY KEY (`id`)
-) AUTO_INCREMENT=1;
+CREATE TABLE person (
+  per_id number ,
+  name varchar2(100) NOT NULL,
+  email varchar2(100) NOT NULL,
+  gender varchar2(10) NOT NULL,
+  PRIMARY KEY(id)
+);
 
 INSERT INTO `person` (`per_id`,`name`,`email`,`gender`) VALUES (1,'Lowery, Meghan P.','Nam.ligula@metusInlorem.ca','female');
 INSERT INTO `person` (`per_id`,`name`,`email`,`gender`) VALUES (2,'Farmer, Boris D.','ipsum@Quisquenonummyipsum.net','male');
