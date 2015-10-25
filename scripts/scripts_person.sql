@@ -6,10 +6,10 @@ END;
 /
 
 CREATE TABLE person (
-  per_id number NOT NULL,
-  name varchar2(100) NOT NULL,
-  email varchar2(100) NOT NULL,
-  gender varchar2(10) NOT NULL,
+  per_id 	number NOT NULL,
+  name 		varchar(100) NOT NULL,
+  email 	varchar(100) NOT NULL,
+  gender 	varchar(10) NOT NULL,
   PRIMARY KEY(per_id)
 );
 
