@@ -4,12 +4,13 @@ BEGIN
 	WHEN OTHERS THEN NULL;
 END;
 /
+
 CREATE TABLE person (
-  per_id number,
+  per_id number NOT NULL,
   name varchar2(100) NOT NULL,
   email varchar2(100) NOT NULL,
   gender varchar2(10) NOT NULL,
-  PRIMARY KEY(id)
+  PRIMARY KEY(per_id)
 );
 
 INSERT INTO person (per_id,name,email,gender) VALUES (1,'Lowery, Meghan P.','Nam.ligula@metusInlorem.ca','female');
