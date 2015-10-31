@@ -34,7 +34,7 @@ to get the advanced Linux system administration training and Linux security trai
 need to keep their IT infrastructure secure and operating at optimal levels.','Active',500);
 
 INSERT INTO course_ (c_code,title,course_level,description,status,retail_price) 
-VALUES ('BUS2020','Business Communication I','beginner',
+VALUES ('BUSI2020','Business Communication I','beginner',
 'Convey technical content to any audience through specific, clear and concise writing','Active',700);
 
 INSERT INTO course_ (c_code,title,course_level,description,status,retail_price) 
