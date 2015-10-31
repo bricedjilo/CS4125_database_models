@@ -28,7 +28,6 @@ INSERT INTO trainingForSkill (c_code,ks_code) VALUES ('CSCI2125','JAVA2002');
 
 INSERT INTO trainingForSkill (c_code,ks_code) VALUES ('BUSI2020','COM1001');
 INSERT INTO trainingForSkill (c_code,ks_code) VALUES ('BUSI2020','COM2002');
-INSERT INTO trainingForSkill (c_code,ks_code) VALUES ('BUSI2020','COM2003');
 
 INSERT INTO trainingForSkill (c_code,ks_code) VALUES ('LSAT1001','LFS1001');
 INSERT INTO trainingForSkill (c_code,ks_code) VALUES ('LSAT1001','LFS1002');
