@@ -24,6 +24,25 @@ VALUES ('CSCI1583','Software Design and Development I','beginner',
 'An introduction to software design and development using an object-oriented approach','Active',791);
 
 INSERT INTO course_ (c_code,title,course_level,description,status,retail_price) 
+VALUES ('COM2020','Business Communication I','beginner',
+'Convey technical content to any audience through specific, clear and concise writing','Active',1200);
+
+INSERT INTO course_ (c_code,title,course_level,description,status,retail_price) 
+VALUES ('LSAT101','Linux System Administration Training I','beginner',
+'Among the chief reasons the adoption of Linux in the server market continues to 
+grow are the total cost of ownership, technical superiority and security. 
+A portion of the growth can also be attributed to Linux’s dominance in emerging 
+cloud infrastructures. The Linux Foundation recognized that this growth created demand 
+for in-person and online IT training for Linux system administration professionals. 
+Our comprehensive Linux best practices courses are the best way for system administrators 
+to get the advanced Linux system administration training and Linux security training they 
+need to keep their IT infrastructure secure and operating at optimal levels.','Active',500);
+
+INSERT INTO course_ (c_code,title,course_level,description,status,retail_price) 
+VALUES ('UDW1000','Front-End Web Developer','beginner',
+'Introduction to Front-End Web Development','Active',2400);
+
+INSERT INTO course_ (c_code,title,course_level,description,status,retail_price) 
 VALUES ('CSCI1581','Software Design and Development I Laboratory','beginner',
 'Applications, exercises, and explorations in methodologies, software design, and development','Active',791);
 
@@ -44,11 +63,11 @@ VALUES ('CSCI2450','Machine Structure and Assembly Language Programming','medium
 'Assembly language programming and a survey of computer organization.','Active',791);
 
 INSERT INTO course_ (c_code,title,course_level,description,status,retail_price) 
-VALUES ('CSCI2467','Software Design And Development II','medium',
+VALUES ('CSCI2467','Systems Programming Concepts','medium',
 ' Introduction to the concepts and tools used in systems programming. ','Active',657);
 
 INSERT INTO course_ (c_code,title,course_level,description,status,retail_price) 
-VALUES ('CSCI3301','Systems Programming Concepts','medium',
+VALUES ('CSCI3301','Computer Organization','medium',
 'Processor design and performance evaluation.','Active',512);
 
 INSERT INTO course_ (c_code,title,course_level,description,status,retail_price) 
