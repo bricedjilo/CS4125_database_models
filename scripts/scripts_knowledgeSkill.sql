@@ -49,21 +49,12 @@ INSERT INTO knowledgeSkill (ks_code,title,description,skill_level) VALUES ('DBAS
 'Transaction Processing and Concurrency Control:Transaction Fundamentals (3 sessions): OLTP environments, Concurrency 
 issues, need for transactions, Necessary properties of transactions (ACID properties), Transaction states, serializability, 
 Serial schedules, Conflict serializability, View serializability, Recoverable and non-recoverable schedules, Cascading rollbacks, 
-Cascadeless schedules - Concurrency control:Serialized and non-serialized schedules, Testing for serializability, Locking, 
-Lock compatibility matrix, Locking and serializability, Deadlocks and starvation, Two-phase locking (2PL) protocol, 
-Conservative, strict and rigorous 2PL, 2PL with lock conversions, Timestamp-ordering based protocol, Multi-versioning protocol, 
-Multi-granularity locking, Deadlock prevention protocols, Wait-die and wound-wait schemes, Time-out based schemes, 
-Deadlock recovery, Nested transactions - Database recovery techniques:Recovery concepts, Deferred updates technique, 
-Immediate update technique, Shadow paging, ARIES recovery algorithm','Advance');
+Cascadeless schedules - Concurrency control:Serialized and non-serialized schedules, Testing for serializability','Advance');
 
 INSERT INTO knowledgeSkill (ks_code,title,description,skill_level) VALUES ('JDBC1001','JDBC Programming',
 'The course starts with an overview of the JDBC API. Then you learn how to set up your development 
 environment with the appropriate MySQL database drivers. Next the course shows you how to submit a SQL query and process the 
-result set. Also, you learn how to perform SQL insert, updates and deletes.
-The course moves on to advanced topics such as Prepared Statements to handle SQL paramaters. You also learn how to call stored 
-procedures using various parameter types (IN, INOUT, OUT and ResultSet). Next, the course shows you how to process large data 
-types such as BLOBs and CLOBs. Finally, the course wraps up with a section on reading database connection information from a 
-configuration file.','Medium');
+result set. Also, you learn how to perform SQL insert, updates and deletes.','Medium');
 
 INSERT INTO knowledgeSkill (ks_code,title,description,skill_level) VALUES ('RDBMS1001','RDBMS Design','nec, diam.','Beginner');
 INSERT INTO knowledgeSkill (ks_code,title,description,skill_level) VALUES ('CSS1002','CSS','non, sollicitudin','Medium');
