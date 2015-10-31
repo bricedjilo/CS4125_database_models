@@ -8,7 +8,7 @@ END;
 CREATE TABLE trainingForSkill (
 	c_code				varchar(10) NOT NULL,
 	ks_code				varchar(10) NOT NULL
-	primary key (c_code, ks_code)
+	primary key (c_code, ks_code),
 	foreign key (c_code) references course_
 		on delete cascade,
 	foreign key (ks_code) references knowledgeSkill
