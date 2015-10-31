@@ -9,7 +9,7 @@ CREATE TABLE course_(
 	c_code				varchar(10) NOT NULL,
 	title				varchar(100) NOT NULL,
 	course_level		varchar(50) NOT NULL,
-	description			varchar(300) NOT NULL,
+	description			varchar(500) NOT NULL,
 	status				varchar(10) NOT NULL,
 	retail_price		number(10,2) NOT NULL,
 	primary key (c_code)
@@ -29,12 +29,7 @@ VALUES ('COM2020','Business Communication I','beginner',
 
 INSERT INTO course_ (c_code,title,course_level,description,status,retail_price) 
 VALUES ('LSAT101','Linux System Administration Training I','beginner',
-'Among the chief reasons the adoption of Linux in the server market continues to 
-grow are the total cost of ownership, technical superiority and security. 
-A portion of the growth can also be attributed to Linux’s dominance in emerging 
-cloud infrastructures. The Linux Foundation recognized that this growth created demand 
-for in-person and online IT training for Linux system administration professionals. 
-Our comprehensive Linux best practices courses are the best way for system administrators 
+'Our comprehensive Linux best practices courses are the best way for system administrators 
 to get the advanced Linux system administration training and Linux security training they 
 need to keep their IT infrastructure secure and operating at optimal levels.','Active',500);
 
