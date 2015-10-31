@@ -28,10 +28,14 @@ VALUES ('COM2020','Business Communication I','beginner',
 'Convey technical content to any audience through specific, clear and concise writing','Active',1200);
 
 INSERT INTO course_ (c_code,title,course_level,description,status,retail_price) 
-VALUES ('LSAT101','Linux System Administration Training I','beginner',
+VALUES ('LSAT1001','Linux System Administration Training I','beginner',
 'Our comprehensive Linux best practices courses are the best way for system administrators 
 to get the advanced Linux system administration training and Linux security training they 
 need to keep their IT infrastructure secure and operating at optimal levels.','Active',500);
+
+INSERT INTO course_ (c_code,title,course_level,description,status,retail_price) 
+VALUES ('BUS2020','Business Communication I','beginner',
+'Convey technical content to any audience through specific, clear and concise writing','Active',700);
 
 INSERT INTO course_ (c_code,title,course_level,description,status,retail_price) 
 VALUES ('UDW1000','Front-End Web Developer','beginner',
