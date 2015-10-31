@@ -42,6 +42,9 @@ VALUES ('UDW1000','Front-End Web Developer','beginner',
 'Introduction to Front-End Web Development','Active',2400);
 
 INSERT INTO course_ (c_code,title,course_level,description,status,retail_price) 
+VALUES ('FIN2302','Introduction to Investing','Medium','The course provides an overview of investment opportunities in financial instruments such as common stocks, preferred stocks, government and corporate bonds, rights, warrants, convertibles, options, futures, and mutual funds.','Active',584);
+
+INSERT INTO course_ (c_code,title,course_level,description,status,retail_price) 
 VALUES ('CSCI1581','Software Design and Development I Laboratory','beginner',
 'Applications, exercises, and explorations in methodologies, software design, and development','Active',791);
 
@@ -92,13 +95,6 @@ VALUES ('CSCI4401','Principles of Operating Systems I','advanced',
 INSERT INTO course_ (c_code,title,course_level,description,status,retail_price) 
 VALUES ('CSCI4402','Principles of Operating Systems II','advanced',
 'A continuation of CSCI 4401 with emphasis on time-sharing, multiprocessing, and virtual system environments.','Expired',584);
-
-INSERT INTO course_ (c_code,title,course_level,description,status,retail_price) 
-VALUES ('FIN2302','Introduction to Investing','Medium',
-'The course provides an overview of investment
-opportunities in financial instruments such as common
-stocks, preferred stocks, government and corporate bonds, rights,
-warrants, convertibles, options, futures, and mutual funds.','Active',584);
 
 INSERT INTO course_ (c_code,title,course_level,description,status,retail_price) 
 VALUES ('None','No Prerequisites','N/A','This course has no prerequisites','N/A',0);

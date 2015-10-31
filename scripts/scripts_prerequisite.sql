@@ -1,7 +1,7 @@
 BEGIN
-	EXECUTE IMMEDIATE 'DROP TABLE prerequisite';
-  EXCEPTION
-	WHEN OTHERS THEN NULL;
+	EXECUTE IMMEDIATE 'DROP TABLE prerequisite CASCADE CONSTRAINTS'; 		
+	EXECUTE IMMEDIATE 'DROP TABLE prerequisite PURGE'; 	
+	EXCEPTION WHEN OTHERS THEN NULL;
 END;
 /
 
@@ -13,6 +13,21 @@ CREATE TABLE prerequisite(
 	foreign key (c_code) references course_
 		on delete cascade
 );
+
+INSERT INTO prerequisite (c_code,prerequisite_id,co_prerequisite_id) 
+VALUES ('COM2020','None','None');
+
+INSERT INTO prerequisite (c_code,prerequisite_id,co_prerequisite_id) 
+VALUES ('LSAT1001','None','None');
+
+INSERT INTO prerequisite (c_code,prerequisite_id,co_prerequisite_id) 
+VALUES ('BUSI2020','None','None');
+
+INSERT INTO prerequisite (c_code,prerequisite_id,co_prerequisite_id) 
+VALUES ('UDW1000','None','None');
+
+INSERT INTO prerequisite (c_code,prerequisite_id,co_prerequisite_id) 
+VALUES ('FIN2302','None','None');
 
 INSERT INTO prerequisite (c_code,prerequisite_id,co_prerequisite_id) 
 VALUES ('CSCI1581','None','CSCI1583');
