@@ -1,7 +1,7 @@
 BEGIN
-	EXECUTE IMMEDIATE 'DROP TABLE requiredSkill';
-  EXCEPTION
-	WHEN OTHERS THEN NULL;
+	EXECUTE IMMEDIATE 'DROP TABLE requiredSkill CASCADE CONSTRAINTS'; 		
+	EXECUTE IMMEDIATE 'DROP TABLE requiredSkill PURGE'; 	
+	EXCEPTION WHEN OTHERS THEN NULL;
 END;
 /
 
@@ -30,7 +30,6 @@ INSERT INTO requiredSkill (pos_code,ks_code) VALUES ('A6A3H7','DBAS2002');
 INSERT INTO requiredSkill (pos_code,ks_code) VALUES ('A6A3H7','RDBMS1001');
 INSERT INTO requiredSkill (pos_code,ks_code) VALUES ('A6A3H7','DBAS1001');
 INSERT INTO requiredSkill (pos_code,ks_code) VALUES ('A6A3H7','DBAS1002');
-INSERT INTO requiredSkill (pos_code,ks_code) VALUES ('A6A3H7','DBAS1001');
 INSERT INTO requiredSkill (pos_code,ks_code) VALUES ('A6A3H7','COMP2002');
 INSERT INTO requiredSkill (pos_code,ks_code) VALUES ('A6A3H7','COMP2001');
 
