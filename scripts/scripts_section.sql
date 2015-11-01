@@ -14,8 +14,7 @@ CREATE TABLE section(
 	format			varchar(20) NOT NULL,
 	price			number(10,2) NOT NULL,
 	primary key (c_code, sec_no, year),
-	foreign key (c_code) references course_
-		on delete cascade
+	foreign key (c_code) references course_ on delete cascade
 );
 
 INSERT INTO section (c_code,sec_no,year,complete_date,offered_by,format,price) VALUES ('CSCI2121',1,'2013',
