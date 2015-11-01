@@ -17,6 +17,31 @@ CREATE TABLE section(
 	foreign key (c_code) references course_ on delete cascade
 );
 
+INSERT INTO section (c_code,sec_no,year,complete_date,offered_by,format,price) VALUES ('COM2020',1,'2014',
+TO_DATE('2014-AUG-12 12:00','YYYY-MON-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'),'UMC','classroom',550);
+INSERT INTO section (c_code,sec_no,year,complete_date,offered_by,format,price) VALUES ('COM2020',2,'2014',
+TO_DATE('2014-AUG-12 12:00','YYYY-MON-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'),'UMC','online-sync',650);
+
+INSERT INTO section (c_code,sec_no,year,complete_date,offered_by,format,price) VALUES ('LSAT1001',1,'2015',
+TO_DATE('2015-DEC-15 12:00','YYYY-MON-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'),'UNO','classroom',550);
+INSERT INTO section (c_code,sec_no,year,complete_date,offered_by,format,price) VALUES ('LSAT1001',2,'2015',
+TO_DATE('2015-DEC-15 12:00','YYYY-MON-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'),'UNO','classroom',550);
+
+INSERT INTO section (c_code,sec_no,year,complete_date,offered_by,format,price) VALUES ('BUSI2020',1,'2015',
+TO_DATE('2015-DEC-15 12:00','YYYY-MON-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'),'UNO','classroom',550);
+INSERT INTO section (c_code,sec_no,year,complete_date,offered_by,format,price) VALUES ('BUSI2020',2,'2015',
+TO_DATE('2015-DEC-15 12:00','YYYY-MON-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'),'UNO','classroom',550);
+
+INSERT INTO section (c_code,sec_no,year,complete_date,offered_by,format,price) VALUES ('UDW1000',1,'2014',
+TO_DATE('2014-DEC-10 12:00','YYYY-MON-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'),'Pearson','online-selfpaced',500);
+INSERT INTO section (c_code,sec_no,year,complete_date,offered_by,format,price) VALUES ('UDW1000',2,'2014',
+TO_DATE('2014-DEC-10 12:00','YYYY-MON-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'),'Pearson','online-selfpaced',500);
+
+INSERT INTO section (c_code,sec_no,year,complete_date,offered_by,format,price) VALUES ('FIN2302',1,'2014',
+TO_DATE('2014-MAY-10 12:00','YYYY-MON-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'),'Berkley','online-sync',650);
+INSERT INTO section (c_code,sec_no,year,complete_date,offered_by,format,price) VALUES ('FIN2302',2,'2014',
+TO_DATE('2014-MAY-10 12:00','YYYY-MON-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'),'Berkley','online-selfpaced',700);
+
 INSERT INTO section (c_code,sec_no,year,complete_date,offered_by,format,price) VALUES ('CSCI2121',1,'2013',
 TO_DATE('2013-MAY-10 12:00','YYYY-MON-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'),'Berkley','online-sync',650);
 INSERT INTO section (c_code,sec_no,year,complete_date,offered_by,format,price) VALUES ('CSCI2121',2,'2013',
@@ -33,14 +58,14 @@ INSERT INTO section (c_code,sec_no,year,complete_date,offered_by,format,price) V
 TO_DATE('2015-DEC-15 12:00','YYYY-MON-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'),'UNO','classroom',550);
 
 INSERT INTO section (c_code,sec_no,year,complete_date,offered_by,format,price) VALUES ('CSCI4101',1,'2015',
-TO_DATE('2012-AUG-12 12:00','YYYY-MON-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'),'UNO','classroom',550);
+TO_DATE('2015-AUG-12 12:00','YYYY-MON-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'),'UNO','classroom',550);
 INSERT INTO section (c_code,sec_no,year,complete_date,offered_by,format,price) VALUES ('CSCI4101',2,'2015',
-TO_DATE('2012-AUG-12 12:00','YYYY-MON-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'),'UNO','classroom',550);
+TO_DATE('2015-AUG-12 12:00','YYYY-MON-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'),'UNO','classroom',550);
 
 INSERT INTO section (c_code,sec_no,year,complete_date,offered_by,format,price) VALUES ('CSCI1583',1,'2014',
-TO_DATE('2012-AUG-12 12:00','YYYY-MON-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'),'UMC','classroom',550);
+TO_DATE('2014-AUG-12 12:00','YYYY-MON-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'),'UMC','classroom',550);
 INSERT INTO section (c_code,sec_no,year,complete_date,offered_by,format,price) VALUES ('CSCI1583',2,'2014',
-TO_DATE('2012-AUG-12 12:00','YYYY-MON-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'),'UMC','online-sync',650);
+TO_DATE('2014-AUG-12 12:00','YYYY-MON-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'),'UMC','online-sync',650);
 
 INSERT INTO section (c_code,sec_no,year,complete_date,offered_by,format,price) VALUES ('CSCI4208',1,'2012',
 TO_DATE('2012-MAY-12 12:00','YYYY-MON-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'),'UMC','classroom',650);
@@ -59,10 +84,16 @@ TO_DATE('2012-DEC-11 12:00','YYYY-MON-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'),
 
 INSERT INTO section (c_code,sec_no,year,complete_date,offered_by,format,price) VALUES ('CSCI2450',1,'2016',
 TO_DATE('2016-DEC-11 12:00','YYYY-MON-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'),'UNO','classroom',700);
+INSERT INTO section (c_code,sec_no,year,complete_date,offered_by,format,price) VALUES ('CSCI2450',2,'2016',
+TO_DATE('2016-DEC-11 12:00','YYYY-MON-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'),'UNO','classroom',700);
 
 INSERT INTO section (c_code,sec_no,year,complete_date,offered_by,format,price) VALUES ('CSCI4402',1,'2015',
 TO_DATE('2015-DEC-11 12:00','YYYY-MON-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'),'UNO','classroom',700);
+INSERT INTO section (c_code,sec_no,year,complete_date,offered_by,format,price) VALUES ('CSCI4402',2,'2015',
+TO_DATE('2015-DEC-11 12:00','YYYY-MON-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'),'UNO','classroom',700);
 
+INSERT INTO section (c_code,sec_no,year,complete_date,offered_by,format,price) VALUES ('CSCI2125',1,'2015',
+TO_DATE('2015-DEC-11 12:00','YYYY-MON-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'),'UMC','classroom',700);
 INSERT INTO section (c_code,sec_no,year,complete_date,offered_by,format,price) VALUES ('CSCI2125',2,'2015',
 TO_DATE('2015-DEC-11 12:00','YYYY-MON-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'),'UMC','classroom',700);
 
@@ -71,10 +102,12 @@ TO_DATE('2013-MAY-11 12:00','YYYY-MON-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'),
 
 INSERT INTO section (c_code,sec_no,year,complete_date,offered_by,format,price) VALUES ('CSCI1581',1,'2016',
 TO_DATE('2016-MAY-05 12:00','YYYY-MON-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'),'UMC','online-sync',700);
+INSERT INTO section (c_code,sec_no,year,complete_date,offered_by,format,price) VALUES ('CSCI1581',2,'2016',
+TO_DATE('2016-MAY-05 12:00','YYYY-MON-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'),'UMC','online-sync',700);
 
-INSERT INTO section (c_code,sec_no,year,complete_date,offered_by,format,price) VALUES ('CSCI2467',3,'2013',
-TO_DATE('2016-MAY-05 12:00','YYYY-MON-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'),'UMC','classroom',700);
+INSERT INTO section (c_code,sec_no,year,complete_date,offered_by,format,price) VALUES ('CSCI2467',1,'2013',
+TO_DATE('2013-MAY-05 12:00','YYYY-MON-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'),'UMC','classroom',700);
 
-INSERT INTO section (c_code,sec_no,year,complete_date,offered_by,format,price) VALUES ('CSCI3301',3,'2016',
+INSERT INTO section (c_code,sec_no,year,complete_date,offered_by,format,price) VALUES ('CSCI3301',1,'2016',
 TO_DATE('2016-MAY-05 12:00','YYYY-MON-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'),'Pearson','classroom',700);
 
