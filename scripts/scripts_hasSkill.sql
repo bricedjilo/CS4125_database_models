@@ -6,11 +6,11 @@ END;
 /
 
 CREATE TABLE hasSkill (
-  per_id 	number DEFAULT 0 NOT NULL,
-  ks_code	varchar(10) DEFAULT 'NONE' NOT NULL,
-  PRIMARY KEY(per_id,ks_code),
-  foreign key (per_id) references person on delete NO ACTION ON UPDATE RESTRICT,
-  foreign key (ks_code) references knowledgeSkill on delete NO ACTION ON UPDATE RESTRICT
+  per_id 	number NOT NULL,
+  ks_code	varchar(10) NOT NULL,
+  PRIMARY KEY (per_id,ks_code),
+  foreign key (per_id) references person,
+  foreign key (ks_code) references knowledgeSkill
 );
 
 INSERT INTO hasSkill (per_id,ks_code) VALUES (16,'DBAS1002');
