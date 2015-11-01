@@ -66,7 +66,7 @@ INSERT INTO takes (sec_no,c_code,per_id,year,grade) VALUES (2,'CSCI4350',34,'201
 INSERT INTO takes (sec_no,c_code,per_id,year,grade) VALUES (1,'CSCI2467',8,'2013','D');
 INSERT INTO takes (sec_no,c_code,per_id,year,grade) VALUES (2,'CSCI2120',4,'2014','C');
 INSERT INTO takes (sec_no,c_code,per_id,year,grade) VALUES (2,'CSCI2125',34,'2015','A');
-INSERT INTO takes (sec_no,c_code,per_id,year,grade) VALUES (3,'LSAT1001',16,'2012','D');
+INSERT INTO takes (sec_no,c_code,per_id,year,grade) VALUES (2,'LSAT1001',16,'2015','D');
 INSERT INTO takes (sec_no,c_code,per_id,year,grade) VALUES (1,'CSCI3301',41,'2016','D');
 INSERT INTO takes (sec_no,c_code,per_id,year,grade) VALUES (1,'MATH1115',7,'2011','A');
 INSERT INTO takes (sec_no,c_code,per_id,year,grade) VALUES (1,'CSCI4208',39,'2012','B');
@@ -77,7 +77,7 @@ INSERT INTO takes (sec_no,c_code,per_id,year,grade) VALUES (1,'CSCI3301',1,'2016
 INSERT INTO takes (sec_no,c_code,per_id,year,grade) VALUES (2,'CSCI1583',5,'2014','D');
 INSERT INTO takes (sec_no,c_code,per_id,year,grade) VALUES (1,'CSCI4350',6,'2011','A');
 INSERT INTO takes (sec_no,c_code,per_id,year,grade) VALUES (1,'CSCI1583',15,'2014','A');
-INSERT INTO takes (sec_no,c_code,per_id,year,grade) VALUES (2,'LSAT1001',43,'2013','B');
+INSERT INTO takes (sec_no,c_code,per_id,year,grade) VALUES (2,'LSAT1001',43,'2015','B');
 INSERT INTO takes (sec_no,c_code,per_id,year,grade) VALUES (2,'CSCI2125',28,'2015','B');
 INSERT INTO takes (sec_no,c_code,per_id,year,grade) VALUES (1,'CSCI2121',27,'2013','D');
 INSERT INTO takes (sec_no,c_code,per_id,year,grade) VALUES (1,'CSCI2120',26,'2014','A');
@@ -87,7 +87,7 @@ INSERT INTO takes (sec_no,c_code,per_id,year,grade) VALUES (1,'CSCI2467',32,'201
 INSERT INTO takes (sec_no,c_code,per_id,year,grade) VALUES (1,'CSCI4401',11,'2013','C');
 INSERT INTO takes (sec_no,c_code,per_id,year,grade) VALUES (1,'CSCI3301',2,'2016','A');
 INSERT INTO takes (sec_no,c_code,per_id,year,grade) VALUES (2,'CSCI2450',36,'2016','C');
-INSERT INTO takes (sec_no,c_code,per_id,year,grade) VALUES (1,'MATH1115',21,'2012','A');
+INSERT INTO takes (sec_no,c_code,per_id,year,grade) VALUES (1,'MATH1115',51,'2012','A');
 INSERT INTO takes (sec_no,c_code,per_id,year,grade) VALUES (1,'CSCI4401',47,'2013','D');
 INSERT INTO takes (sec_no,c_code,per_id,year,grade) VALUES (1,'CSCI2125',43,'2015','C');
 INSERT INTO takes (sec_no,c_code,per_id,year,grade) VALUES (1,'CSCI1583',45,'2014','D');
