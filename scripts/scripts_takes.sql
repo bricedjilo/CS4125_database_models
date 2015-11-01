@@ -10,7 +10,7 @@ CREATE TABLE takes (
 	c_code 	varchar(10) NOT NULL,
 	per_id 	number NOT NULL,
 	year	varchar(4) NOT NULL,
-	grade 	number NOT NULL,
+	grade 	varchar(2) NOT NULL,
 	PRIMARY KEY (sec_no,c_code,per_id,year),
 	foreign key (c_code,sec_no,year) references section on delete cascade,
 	foreign key (per_id) references person on delete cascade
