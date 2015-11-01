@@ -1,10 +1,9 @@
 BEGIN
-	EXECUTE IMMEDIATE 'DROP TABLE companyAddress';
-  EXCEPTION
-	WHEN OTHERS THEN NULL;
+	EXECUTE IMMEDIATE 'DROP TABLE companyAddress CASCADE CONSTRAINTS'; 		
+	EXECUTE IMMEDIATE 'DROP TABLE companyAddress PURGE'; 	
+	EXCEPTION WHEN OTHERS THEN NULL;
 END;
 /
-
 create table companyAddress(
 	comp_id		number NOT NULL, 
 	street		varchar(100) NOT NULL,

@@ -1,7 +1,7 @@
 BEGIN
-	EXECUTE IMMEDIATE 'DROP TABLE speciality';
-  EXCEPTION
-	WHEN OTHERS THEN NULL;
+	EXECUTE IMMEDIATE 'DROP TABLE speciality CASCADE CONSTRAINTS'; 		
+	EXECUTE IMMEDIATE 'DROP TABLE speciality PURGE'; 	
+	EXCEPTION WHEN OTHERS THEN NULL;
 END;
 /
 
@@ -9,8 +9,7 @@ create table speciality(
 	comp_id				number NOT NULL, 
 	speciality_name		varchar(100) NOT NULL,
 	primary key (comp_id, speciality_name),
-	foreign key (comp_id) references company
-		on delete cascade
+	foreign key (comp_id) references company on delete cascade
 );
 
 INSERT INTO speciality (comp_id,speciality_name) VALUES (1,'electronics');
