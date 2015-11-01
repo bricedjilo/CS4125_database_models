@@ -6,11 +6,11 @@ END;
 /
 
 CREATE TABLE hasSkill (
-  per_id 	number NOT NULL,
-  ks_code	varchar(10) NOT NULL,
-  PRIMARY KEY (per_id,ks_code),
-  foreign key (per_id) references person on delete cascade,
-  foreign key (ks_code) references knowledgeSkill on delete cascade
+	per_id 	number NOT NULL,
+	ks_code	varchar(10) NOT NULL,
+	PRIMARY KEY (per_id,ks_code),
+	foreign key (per_id) references person on delete cascade,
+	foreign key (ks_code) references knowledgeSkill on delete cascade	
 );
 
 INSERT INTO hasSkill (per_id,ks_code) VALUES (16,'DBAS1002');
@@ -75,7 +75,6 @@ INSERT INTO hasSkill (per_id,ks_code) VALUES (31,'LFS1002');
 INSERT INTO hasSkill (per_id,ks_code) VALUES (3,'JAVA1001');
 INSERT INTO hasSkill (per_id,ks_code) VALUES (36,'ALGB1002');
 INSERT INTO hasSkill (per_id,ks_code) VALUES (47,'FIN2002');
-INSERT INTO hasSkill (per_id,ks_code) VALUES (43,'ALGB1002');
 INSERT INTO hasSkill (per_id,ks_code) VALUES (21,'LFS1002');
 INSERT INTO hasSkill (per_id,ks_code) VALUES (15,'LFS2001');
 INSERT INTO hasSkill (per_id,ks_code) VALUES (46,'WDFE1001');
@@ -95,8 +94,6 @@ INSERT INTO hasSkill (per_id,ks_code) VALUES (32,'COM2001');
 INSERT INTO hasSkill (per_id,ks_code) VALUES (32,'LFS2001');
 INSERT INTO hasSkill (per_id,ks_code) VALUES (29,'LFS1001');
 INSERT INTO hasSkill (per_id,ks_code) VALUES (42,'JAVA2001');
-INSERT INTO hasSkill (per_id,ks_code) VALUES (16,'DBAS2002');
-INSERT INTO hasSkill (per_id,ks_code) VALUES (29,'LFS1001');
 INSERT INTO hasSkill (per_id,ks_code) VALUES (39,'JAVA2001');
 INSERT INTO hasSkill (per_id,ks_code) VALUES (42,'COM2002');
 INSERT INTO hasSkill (per_id,ks_code) VALUES (11,'JDBC1001');
@@ -107,7 +104,6 @@ INSERT INTO hasSkill (per_id,ks_code) VALUES (30,'COM1001');
 INSERT INTO hasSkill (per_id,ks_code) VALUES (14,'COMP2001');
 INSERT INTO hasSkill (per_id,ks_code) VALUES (51,'LFS2001');
 INSERT INTO hasSkill (per_id,ks_code) VALUES (35,'LFS1001');
-INSERT INTO hasSkill (per_id,ks_code) VALUES (17,'JAVA1001');
 INSERT INTO hasSkill (per_id,ks_code) VALUES (26,'FIN2002');
 INSERT INTO hasSkill (per_id,ks_code) VALUES (32,'JAVA2002');
 INSERT INTO hasSkill (per_id,ks_code) VALUES (14,'JAVA2002');

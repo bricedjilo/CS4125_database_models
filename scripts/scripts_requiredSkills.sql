@@ -7,7 +7,7 @@ END;
 
 CREATE TABLE requiredSkill (
   pos_code 		varchar(10) NOT NULL,
-  ks_code 		varchar(100) NOT NULL,
+  ks_code 		varchar(10) NOT NULL,
   PRIMARY KEY(pos_code,ks_code),
   foreign key (pos_code) references jobProfile
 		on delete cascade,
