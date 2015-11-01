@@ -9,7 +9,7 @@ CREATE TABLE knowledgeSkill (
   ks_code 		varchar(10) NOT NULL,
   title 		varchar(100) NOT NULL,
   description 	varchar(500) NOT NULL,
-  skill_level 		varchar(15) NOT NULL,
+  skill_level 	varchar(15) NOT NULL,
   PRIMARY KEY(ks_code)
 );
 

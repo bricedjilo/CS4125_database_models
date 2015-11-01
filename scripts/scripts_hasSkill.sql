@@ -9,8 +9,8 @@ CREATE TABLE hasSkill (
   per_id 	number NOT NULL,
   ks_code	varchar(10) NOT NULL,
   PRIMARY KEY (per_id,ks_code),
-  foreign key (per_id) references person,
-  foreign key (ks_code) references knowledgeSkill
+  foreign key (per_id) references person on delete cascade,
+  foreign key (ks_code) references knowledgeSkill on delete cascade
 );
 
 INSERT INTO hasSkill (per_id,ks_code) VALUES (16,'DBAS1002');
