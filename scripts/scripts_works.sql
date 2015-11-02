@@ -13,7 +13,8 @@ CREATE TABLE works (
 	end_date	varchar(20) NOT NULL,
 	PRIMARY KEY (per_id,job_code,start_date),
 	foreign key (per_id) references person on delete cascade,
-	foreign key (job_code,comp_id) references jobs on delete cascade
+	foreign key (job_code) references jobs on delete cascade,
+	foreign key (comp_id) references company on delete cascade
 );
 
 INSERT INTO works (per_id,job_code,comp_id,start_date,end_date) VALUES (14,'LKE4Y3',41,'Aug 24, 2015','Apr 12, 2017');
