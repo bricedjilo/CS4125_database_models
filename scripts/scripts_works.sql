@@ -8,10 +8,10 @@ END;
 CREATE TABLE works (
 	per_id 		number NOT NULL,
 	job_code 	varchar(10) NOT NULL,
-	start_date 	DATE
+	start_date 	varchar(20) NOT NULL,
 	comp_id		number NOT NULL,
 	job_type	varchar(20) NOT NULL,
-	end_date	DATE
+	end_date	varchar(20) NOT NULL,
 	PRIMARY KEY (per_id,job_code,start_date),
 	foreign key (per_id,job_code) references company on delete cascade
 );
