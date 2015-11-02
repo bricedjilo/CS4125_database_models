@@ -13,7 +13,8 @@ CREATE TABLE works (
 	job_type	varchar(20) NOT NULL,
 	end_date	varchar(20) NOT NULL,
 	PRIMARY KEY (per_id,job_code,start_date),
-	foreign key (per_id,job_code) references company on delete cascade
+	foreign key (per_id) references person on delete cascade,
+	foreign key (job_code) references job on delete cascade
 );
 
 INSERT INTO job (per_id,job_code,start_date,comp_id,job_type,end_date) VALUES (27,'IRA1D2','Mar 16, 2010',8,'full-time','Aug 11, 2017');
