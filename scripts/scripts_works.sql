@@ -13,11 +13,13 @@ CREATE TABLE works (
 	end_date	varchar(20) NOT NULL,
 	PRIMARY KEY (per_id,job_code,start_date),
 	foreign key (per_id) references person on delete cascade,
-	foreign key (job_code) references jobs on delete cascade
+	foreign key (job_code) references jobs
 );
 
 INSERT INTO works (per_id,job_code,start_date,end_date) VALUES (47,'FDO7F1','Jul 16, 2012','May 2, 2017');
-/*INSERT INTO works (per_id,job_code,start_date,end_date) VALUES (45,'RMU5F0','Sep 12, 2015','Dec 13, 2017');
+
+/*
+INSERT INTO works (per_id,job_code,start_date,end_date) VALUES (45,'RMU5F0','Sep 12, 2015','Dec 13, 2017');
 INSERT INTO works (per_id,job_code,start_date,end_date) VALUES (30,'GHG9A0','Aug 26, 2010','Nov 10, 2017');
 INSERT INTO works (per_id,job_code,start_date,end_date) VALUES (51,'YYP8D5','Jan 28, 2013','Feb 13, 2017');
 INSERT INTO works (per_id,job_code,start_date,end_date) VALUES (16,'EOQ1I0','Oct 10, 2010','Jan 27, 2017');
