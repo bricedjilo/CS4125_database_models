@@ -9,7 +9,6 @@ CREATE TABLE works (
 	per_id 		number NOT NULL,
 	job_code 	varchar(10) NOT NULL,
 	start_date 	varchar(20) NOT NULL,
-	comp_id		number NOT NULL,
 	end_date	varchar(20) NOT NULL,
 	PRIMARY KEY (per_id,job_code,start_date),
 	foreign key (per_id) references person on delete cascade,
