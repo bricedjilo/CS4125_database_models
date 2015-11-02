@@ -110,7 +110,7 @@ INSERT INTO jobs (job_code,comp_id,job_type,pay_rate,pay_type,pos_code) VALUES (
 INSERT INTO jobs (job_code,comp_id,job_type,pay_rate,pay_type,pos_code) VALUES ('WRM5O3',17,'full-time',60000,'salary','A2G7P5');
 INSERT INTO jobs (job_code,comp_id,job_type,pay_rate,pay_type,pos_code) VALUES ('VJB1E3',50,'part-time',80000,'salary','J3B5W2');
 INSERT INTO jobs (job_code,comp_id,job_type,pay_rate,pay_type,pos_code) VALUES ('MDE1H5',40,'full-time',60000,'wage','Y8H7C0');
-INSERT INTO jobs (job_code,comp_id,job_type,pay_rate,pay_type,pos_code) VALUES ('YNR2A0',44,'part-time',70000,'salary'.'U4N9E4');
+INSERT INTO jobs (job_code,comp_id,job_type,pay_rate,pay_type,pos_code) VALUES ('YNR2A0',44,'part-time',70000,'salary','U4N9E4');
 INSERT INTO jobs (job_code,comp_id,job_type,pay_rate,pay_type,pos_code) VALUES ('ARE8M6',46,'full-time',80000,'salary','F5G8Y8');
 INSERT INTO jobs (job_code,comp_id,job_type,pay_rate,pay_type,pos_code) VALUES ('ECQ5Z6',40,'full-time',80000,'salary','J3B5W2');
 INSERT INTO jobs (job_code,comp_id,job_type,pay_rate,pay_type,pos_code) VALUES ('WUX9V0',43,'full-time',50000,'salary','Y8H7C0');
