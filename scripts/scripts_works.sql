@@ -15,9 +15,10 @@ CREATE TABLE works (
 	foreign key (job_code) references jobs on delete cascade
 );
 
+/*
 INSERT INTO works (per_id,job_code,start_date,end_date) VALUES (47,'FDO7F1','Jul 16, 2012','May 2, 2017');
 
-/*
+
 INSERT INTO works (per_id,job_code,start_date,end_date) VALUES (45,'RMU5F0','Sep 12, 2015','Dec 13, 2017');
 INSERT INTO works (per_id,job_code,start_date,end_date) VALUES (30,'GHG9A0','Aug 26, 2010','Nov 10, 2017');
 INSERT INTO works (per_id,job_code,start_date,end_date) VALUES (51,'YYP8D5','Jan 28, 2013','Feb 13, 2017');
