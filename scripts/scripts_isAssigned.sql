@@ -10,8 +10,9 @@ CREATE TABLE isAssigned(
 	project_id 		number NOT NULL,
 	job_code 		varchar(10) NOT NULL,
 	primary key (comp_id,project_id,job_code),
+	foreign key (job_code,comp_id) references jobs on delete cascade,
 	foreign key (project_id) references project on delete cascade,
-	foreign key (comp_id,job_code) references jobs
+	
 );
 
 INSERT INTO isAssigned (comp_id,project_id,job_code) VALUES (1,1,'YVC0O4');
