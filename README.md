@@ -5,5 +5,4 @@ This project emphasizes the use of <b>Spring MVC</b>, <b>RESTful architecture</b
 
 # The Assignment:
 
-
-More on the details later.
+https://github.com/bricedjilo/CS4125_database_models/blob/app/proj4125f15.pdf
