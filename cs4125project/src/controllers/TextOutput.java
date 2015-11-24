@@ -1,4 +1,4 @@
-package gui;
+package controllers;
 
 public class TextOutput {
 	public String getInfo() {

@@ -1,4 +1,4 @@
-package demo;
+package controllers;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -9,15 +9,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class hello
+ * Servlet implementation class URLParameter
  */
-public class hello extends HttpServlet {
+public class URLParameter extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public hello() {
+    public URLParameter() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -26,8 +26,14 @@ public class hello extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String user = request.getParameter("user");
+		String id = request.getParameter("id");
+		
 		PrintWriter out = response.getWriter();
-		out.println("Hello");
+		out.println("<html>");
+		out.println("The user parameter is " + user);
+		out.println("The id parameter is " + id);
+		out.println("</html>");
 	}
 
 	/**
