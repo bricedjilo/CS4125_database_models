@@ -41,9 +41,7 @@ INSERT INTO requiredSkill (pos_code,ks_code) VALUES ('S1N9T4','FIN3000');
 INSERT INTO requiredSkill (pos_code,ks_code) VALUES ('S1N9T4','ACC1001');
 INSERT INTO requiredSkill (pos_code,ks_code) VALUES ('S1N9T4','ALGB1003');
 
-INSERT INTO requiredSkill (pos_code,ks_code) VALUES ('K4A0M4','COM2002');
 INSERT INTO requiredSkill (pos_code,ks_code) VALUES ('K4A0M4','ACC1001');
-INSERT INTO requiredSkill (pos_code,ks_code) VALUES ('K4A0M4','ALGB1003');
 
 INSERT INTO requiredSkill (pos_code,ks_code) VALUES ('F5G8Y8','ALGB1003');
 INSERT INTO requiredSkill (pos_code,ks_code) VALUES ('F5G8Y8','COM2002');
@@ -67,9 +65,7 @@ INSERT INTO requiredSkill (pos_code,ks_code) VALUES ('U5J6F3','DBAS1002');
 INSERT INTO requiredSkill (pos_code,ks_code) VALUES ('U5J6F3','DBAS1003');
 INSERT INTO requiredSkill (pos_code,ks_code) VALUES ('U5J6F3','DBAS3003');
 
-INSERT INTO requiredSkill (pos_code,ks_code) VALUES ('J3B5W2','COM2002');
 INSERT INTO requiredSkill (pos_code,ks_code) VALUES ('J3B5W2','FIN2002');
-INSERT INTO requiredSkill (pos_code,ks_code) VALUES ('J3B5W2','ACC1001');
 
 INSERT INTO requiredSkill (pos_code,ks_code) VALUES ('Y8H7C0','COMP2001');
 INSERT INTO requiredSkill (pos_code,ks_code) VALUES ('Y8H7C0','COMP2002');

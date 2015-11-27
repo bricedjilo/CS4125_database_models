@@ -1,18 +1,17 @@
 BEGIN
-	EXECUTE IMMEDIATE 'DROP TABLE isAssigned';
-  EXCEPTION
-	WHEN OTHERS THEN NULL;
+	EXECUTE IMMEDIATE 'DROP TABLE isAssigned CASCADE CONSTRAINTS'; 		
+	EXECUTE IMMEDIATE 'DROP TABLE isAssigned PURGE'; 	
+	EXCEPTION WHEN OTHERS THEN NULL;
 END;
 /
 
-CREATE TABLE isAssigned(
+CREATE TABLE isAssigned (
 	comp_id 		number NOT NULL,
 	project_id 		number NOT NULL,
 	job_code 		varchar(10) NOT NULL,
 	primary key (comp_id,project_id,job_code),
 	foreign key (job_code,comp_id) references jobs on delete cascade,
-	foreign key (project_id) references project on delete cascade,
-	
+	foreign key (project_id) references project on delete cascade	
 );
 
 INSERT INTO isAssigned (comp_id,project_id,job_code) VALUES (1,1,'YVC0O4');
@@ -132,13 +131,13 @@ INSERT INTO isAssigned (comp_id,project_id,job_code) VALUES (50,50,'BHC6F3');
 INSERT INTO isAssigned (comp_id,project_id,job_code) VALUES (50,76,'VJB1E3');
 
 /*
+INSERT INTO isAssigned (comp_id,project_id,job_code) VALUES (51,51,'ZEE2X7');
+INSERT INTO isAssigned (comp_id,project_id,job_code) VALUES (51,77,'ZEE2X7');
+INSERT INTO isAssigned (comp_id,project_id,job_code) VALUES (51,78,'ZEE2X7');
 INSERT INTO isAssigned (comp_id,project_id,job_code) VALUES (14,14,'RMU5F0');
 INSERT INTO isAssigned (comp_id,project_id,job_code) VALUES (24,24,'QON9E9');
 INSERT INTO isAssigned (comp_id,project_id,job_code) VALUES (27,27,'HCO8X4');
 INSERT INTO isAssigned (comp_id,project_id,job_code) VALUES (35,35,'SFS9S2');
 INSERT INTO isAssigned (comp_id,project_id,job_code) VALUES (35,73,'SFS9S2');
 INSERT INTO isAssigned (comp_id,project_id,job_code) VALUES (41,41,'ZGE8I9');
-INSERT INTO isAssigned (comp_id,project_id,job_code) VALUES (51,51,'ZEE2X7');
-INSERT INTO isAssigned (comp_id,project_id,job_code) VALUES (51,77,'ZEE2X7');
-INSERT INTO isAssigned (comp_id,project_id,job_code) VALUES (51,78,'ZEE2X7');
 */
