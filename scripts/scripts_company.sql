@@ -13,6 +13,15 @@ create table company(
 	primary key (comp_id)
 );
 
+create sequence company_seq start with 1 increment by 1 nomaxvalue;
+create trigger company_trigger
+before insert on company
+for each row
+	begin
+	 select company_seq.nextval into :new.comp_id from dual;
+	end;
+/
+
 INSERT INTO company (comp_id,name,primary_sector,website) VALUES (1,'Placerat Orci Lacus Company','tourism','a mi');
 INSERT INTO company (comp_id,name,primary_sector,website) VALUES (2,'Enim Nisl Elementum LLP','entertainment','senectus et');
 INSERT INTO company (comp_id,name,primary_sector,website) VALUES (3,'Fringilla Ornare Placerat Corporation','tourism','gravida. Praesent');
