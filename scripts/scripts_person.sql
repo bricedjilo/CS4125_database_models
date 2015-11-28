@@ -13,6 +13,15 @@ CREATE TABLE person (
   PRIMARY KEY(per_id)
 );
 
+create sequence person_seq start with 1 increment by 1 nomaxvalue;
+create trigger person_trigger
+before insert on person
+for each row
+	begin
+	 select person_seq.nextval into :new.per_id from dual;
+	end;
+/
+
 INSERT INTO person (per_id,name,email,gender) VALUES (1,'Lowery, Meghan P.','Nam.ligula@metusInlorem.ca','female');
 INSERT INTO person (per_id,name,email,gender) VALUES (2,'Farmer, Boris D.','ipsum@Quisquenonummyipsum.net','male');
 INSERT INTO person (per_id,name,email,gender) VALUES (3,'Wilkinson, Jillian I.','lacinia.orci@disparturient.net','male');
