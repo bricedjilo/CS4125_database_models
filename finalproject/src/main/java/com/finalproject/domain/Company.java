@@ -13,6 +13,10 @@ public class Company {
 		this.primary_sector = primary_sector;
 		this.website = website;
 	}
+	
+	public Company() {
+		
+	}
 
 	public int getComp_id() {
 		return comp_id;
@@ -44,6 +48,12 @@ public class Company {
 
 	public void setWebsite(String website) {
 		this.website = website;
+	}
+
+	@Override
+	public String toString() {
+		return "Company [comp_id=" + comp_id + ", name=" + name + ", primary_sector=" + primary_sector + ", website="
+				+ website + "]";
 	}
 	
 }
