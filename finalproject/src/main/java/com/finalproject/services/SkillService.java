@@ -7,21 +7,34 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.finalproject.dao.SkillsDao;
+import com.finalproject.dao.SkillDao;
+import com.finalproject.domain.Skill;
 
-@Service("skillsService")
-public class SkillsService {
+@Service("skillService")
+public class SkillService {
 	
-	private SkillsDao skillsDao;
+	private SkillDao skillDao;
 	
 	@Autowired
-	public void setSkillsDao(SkillsDao skillsDao) {
-		this.skillsDao = skillsDao;
+	public void setSkillsDao(SkillDao skillsDao) {
+		this.skillDao = skillsDao;
 	}
 
+	public void create(Skill skill){
+		skillDao.create(skill);
+	}
+	
+	public void update(String ksCode, Skill skill){
+		skillDao.update(ksCode, skill);
+	}
+	
+	public void delete(String ksCode){
+		skillDao.delete(ksCode);
+	}
+	
 	public List<Map<String, String>> getAllSkillsByEmployeeName(String employeeName) {
 		try {
-			return skillsDao.getAllSkillsByEmployeeName(employeeName);
+			return skillDao.getAllSkillsByEmployeeName(employeeName);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -31,7 +44,7 @@ public class SkillsService {
 	
 	public List<Map<String, String>> getAllSkillsByEmployeeId(int id) {
 		try {
-			return skillsDao.getAllSkillsByEmployeeId(id);
+			return skillDao.getAllSkillsByEmployeeId(id);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -41,7 +54,7 @@ public class SkillsService {
 
 	public List<Map<String, String>> getAllSkills() {
 		try {
-			return skillsDao.getAllSkills();
+			return skillDao.getAllSkills();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -51,7 +64,7 @@ public class SkillsService {
 
 	public List<Map<String, String>> getAllSkillGapsByEmployeeId(int id) {
 		try {
-			return skillsDao.getAllSkillGapsByEmployeeId(id);
+			return skillDao.getAllSkillGapsByEmployeeId(id);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -62,7 +75,7 @@ public class SkillsService {
 	
 	public List<Map<String, String>> getAllCurrentSkillGapsByEmployeeId(int id) {
 		try {
-			return skillsDao.getAllCurrentSkillGapsByEmployeeId(id);
+			return skillDao.getAllCurrentSkillGapsByEmployeeId(id);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -72,7 +85,7 @@ public class SkillsService {
 
 	public List<Map<String, String>> getSkillsByJobProfileCode(String jobProfileCode) {
 		try {
-			return skillsDao.getSkillsByJobProfileCode(jobProfileCode);
+			return skillDao.getSkillsByJobProfileCode(jobProfileCode);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -82,7 +95,7 @@ public class SkillsService {
 
 	public List<Map<String, String>> getMissingSkillsByEmployeeIdAndJobCode(int per_id, String job_code) {
 		try {
-			return skillsDao.getMissingSkillsByEmployeeIdAndJobCode(per_id, job_code);
+			return skillDao.getMissingSkillsByEmployeeIdAndJobCode(per_id, job_code);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

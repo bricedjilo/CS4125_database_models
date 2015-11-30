@@ -51,7 +51,7 @@ public class PersonController {
 		personService.update(per_id, person);
 	}
 
-	// Update a Person's info
+	// Delete a Person
 	@RequestMapping(value = "/delete/{per_id}", method = RequestMethod.DELETE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public void delete(@PathVariable int per_id) {
 		personService.delete(per_id);

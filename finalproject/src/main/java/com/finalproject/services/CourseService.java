@@ -8,9 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.finalproject.dao.CourseDao;
+import com.finalproject.domain.Course;
+import com.finalproject.domain.Person;
 
 @Service("coursesServices")
-public class CoursesService {
+public class CourseService {
 
 	private CourseDao coursesDao;
 	
@@ -19,6 +21,18 @@ public class CoursesService {
 		this.coursesDao = coursesDao;
 	}
 
+	public void create(Course course) {
+		coursesDao.create(course);
+	}
+	
+	public void update(String cCode, Course course) {
+		coursesDao.update(cCode, course);
+	}
+	
+	public void delete(String cCode) {
+		coursesDao.delete(cCode);
+	}
+	
 	public List<Map<String, String>> getAllcoursesThatAloneCoversAskill(String skillCode) {
 		try {
 			return coursesDao.getAllcoursesThatAloneCoversAskill(skillCode);
