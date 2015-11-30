@@ -7,7 +7,7 @@ public class Course {
 	private String course_level;
 	private String description;
 	private String status;
-	private int retail_price;
+	private double retail_price;
 	
 	public Course(String c_code, String title, String course_level, 
 			String description, String status, int retail_price) {
@@ -49,7 +49,7 @@ public class Course {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public int getRetail_price() {
+	public double getRetail_price() {
 		return retail_price;
 	}
 	public void setRetail_price(int retail_price) {

@@ -11,14 +11,16 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.finalproject.domain.Company;
+import com.finalproject.domain.Person;
 import com.finalproject.services.CompanyService;
 
-@Controller
+@RestController
 @RequestMapping("/companies")
 public class CompanyController {
-	
+
 	private CompanyService companyService;
 
 	@Autowired
@@ -27,9 +29,21 @@ public class CompanyController {
 	}
 
 	// Insert a new Company
-	@RequestMapping(value = "/create", method = RequestMethod.POST)
+	@RequestMapping(value = "/create", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public void create(@RequestBody Company company) {
 		companyService.create(company);
+	}
+
+	// Update a Company's info
+	@RequestMapping(value = "/update/{compId}", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
+	public void update(@RequestBody Company company, @PathVariable int compId) {
+		companyService.update(compId, company);
+	}
+
+	// delete a Company object
+	@RequestMapping(value = "/delete/{compId}", method = RequestMethod.DELETE, consumes = MediaType.APPLICATION_JSON_VALUE)
+	public void update(@PathVariable int compId) {
+		companyService.delete(compId);
 	}
 
 	// List all companies

@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 import com.finalproject.utility.Factories;
 
 @Component("coursesDao")
-public class CoursesDao {
+public class CourseDao {
 	
 	private NamedParameterJdbcTemplate jdbc;
 	private Factories factories;

@@ -7,15 +7,15 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.finalproject.dao.CoursesDao;
+import com.finalproject.dao.CourseDao;
 
 @Service("coursesServices")
 public class CoursesService {
 
-	private CoursesDao coursesDao;
+	private CourseDao coursesDao;
 	
 	@Autowired
-	public void setSkillsDao(CoursesDao coursesDao) {
+	public void setSkillsDao(CourseDao coursesDao) {
 		this.coursesDao = coursesDao;
 	}
 

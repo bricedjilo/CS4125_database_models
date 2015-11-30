@@ -10,9 +10,11 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.stereotype.Component;
 
 import com.finalproject.domain.Company;
+import com.finalproject.domain.Person;
 import com.finalproject.utility.Factories;
 
 @Component("companyDao")
@@ -32,15 +34,32 @@ public class CompanyDao {
 	}
 
 	// Insert/Create
-	public void create(Company company) {
+	public void create(Company company) throws SQLException {
 		Map<String, String> params = new HashMap<String, String>();
-		String sql = "INSERT INTO Company (name, primary_sector, website) "
-				+ "VALUES (:name, :primary_sector, :website)";
+		String SQL = "INSERT INTO Company (name, primary_sector, website) "
+				+ "VALUES (:name, :primarySector, :website)";
 		params.put("name", company.getName());
-		params.put("primary_sector", company.getPrimary_sector());
+		params.put("primarySector", company.getPrimarySector());
 		params.put("website", company.getWebsite());
-		jdbc.update(sql, params);
-		System.out.println(company + "---- from DAO");
+		jdbc.update(SQL, params);
+	}
+
+	// Update or save
+	public void update(int compId, Company company) throws SQLException {
+		MapSqlParameterSource params = new MapSqlParameterSource();
+		String SQL = "UPDATE Company SET name = :name, primary_sector = :primarySector, website = :website WHERE comp_id = :compId";
+		params.addValue("compId", compId);
+		params.addValue("name", company.getName());
+		params.addValue("primarySector", company.getPrimarySector());
+		params.addValue("website", company.getWebsite());
+		jdbc.update(SQL, params);
+	}
+
+	// Delete Company
+	public void delete(int compId) throws SQLException {
+		String SQL = "DELETE FROM Company WHERE comp_id = :compId";
+		SqlParameterSource params = new MapSqlParameterSource("compId", compId);
+		jdbc.update(SQL, params);
 	}
 
 	// List all companies and their info
