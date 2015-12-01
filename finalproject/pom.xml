@@ -18,11 +18,11 @@
 				<groupId>org.flywaydb</groupId>
 				<artifactId>flyway-maven-plugin</artifactId>
 				<version>3.2.1</version>
-			 	 <configuration>
-                    <url>jdbc:oracle:thin:@dbsvcs.cs.uno.edu:1521:orcl</url>
-                    <user>dbrice</user>
-                    <password>tWK9XNrn</password>
-                </configuration>
+				<configuration>
+					<url>jdbc:oracle:thin:@dbsvcs.cs.uno.edu:1521:orcl</url>
+					<user>dbrice</user>
+					<password>tWK9XNrn</password>
+				</configuration>
 				<dependencies>
 					<dependency>
 						<groupId>com.oracle</groupId>
@@ -30,6 +30,27 @@
 						<version>12.1.0.2</version>
 					</dependency>
 				</dependencies>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>2.1</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+						<configuration>
+							<transformers>
+								<transformer
+									implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+									<mainClass>com.finalproject.App</mainClass>
+								</transformer>
+							</transformers>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
