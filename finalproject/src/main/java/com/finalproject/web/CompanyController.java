@@ -53,6 +53,13 @@ public class CompanyController {
 		return companyService.getAllCompanies();
 	}
 
+	// Find companies by name
+	@RequestMapping(value = "/name/{companyName}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseBody
+	public List<Map<String, String>> getCompanyByName(@PathVariable String companyName) {
+		return companyService.getCompanyByName(companyName);
+	}
+
 	// query 3
 	@RequestMapping(value = "/laborcost", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody

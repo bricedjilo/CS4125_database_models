@@ -57,7 +57,6 @@
 					<li><a ng-href="#home">Home</a></li>
 
 
-
 					<li role="presentation" class="dropdown"><a
 						class="dropdown-toggle" data-toggle="dropdown" 
 						role="button" aria-haspopup="true" aria-expanded="false">
@@ -72,9 +71,7 @@
 						</ul>
 					</li>
 
-
-
-					<li><a ng-href="#all_queries">All Queries</a></li>
+					<li><a ng-href="#task6_queries">Queries: Task 6</a></li>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
@@ -82,8 +79,10 @@
 		</div>
 		<!-- /.container -->
 	</nav>
-
+	
+	<div class="container" style="margin-top: 130px;">
 	<div ng-view></div>
+	</div>
 
 
 	
@@ -100,15 +99,16 @@
 	<!-- Angular Core -->
 	<script src="/static/lib/js/angular.min.js"></script>
 	<script src="/static/lib/js/angular-route.min.js"></script>
-
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular-sanitize.min.js"></script>
 	<script src="/static/lib/js/angular-resource.js"></script>
+	<script src="/static/lib/js/ui-bootstrap-tpls-0.14.3.min.js"></script>
 
 	<!-- dbApp -->
 	<script src="/static/js/dbApp.js"></script>
 	<script src="/static/js/controllers/personController.js"></script>
-
+	<script src="/static/js/controllers/task6QueriesController.js"></script>
+	<script src="/static/js/services/Task6QueriesService.js"></script>
 
 </body>
 

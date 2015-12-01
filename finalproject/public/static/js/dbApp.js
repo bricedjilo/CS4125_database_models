@@ -1,7 +1,7 @@
 'use strict';
 
 // Declare app level module which depends on views, and components
-var dbApp = angular.module('dbApp', ['ngSanitize','ngResource','ngRoute']);
+var dbApp = angular.module('dbApp', ['ngSanitize','ngResource','ngRoute','ui.bootstrap']);
 
 dbApp.config(['$routeProvider', function($routeProvider) {
     $routeProvider
@@ -13,9 +13,9 @@ dbApp.config(['$routeProvider', function($routeProvider) {
        templateUrl: 'templates/person.html',
        controller: 'PersonController'
     })    
-    .when('/all_queries', {
-       templateUrl: 'templates/all_queries.html',
-       controller: 'AllQueriesController'
+    .when('/task6_queries', {
+       templateUrl: 'templates/task6_queries.html',
+       controller: 'Task6QueriesController'
     }) 
     .otherwise({
        redirectTo: '/home'

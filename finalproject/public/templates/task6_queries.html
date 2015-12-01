@@ -1,0 +1,51 @@
+
+<hr class="section-heading-spacer">
+<div class="clearfix"></div>
+<div>
+	<h2 class="section-heading">Queries written for task 6</h2>
+
+	<div class="form-group-lg ">
+		<div class="input-group">
+			<span class="input-group-addon btn btn-success" id="sizing-addon2">
+				<b>Select a Query</b>
+			</span> <select class="form-control" ng-model="selected"
+				ng-change="getProcessedQuery(selected.qid)"
+				ng-options="query as query.query for query in  queries track by query.qid">
+			</select>
+		</div>
+		<br />
+		<div class="row">
+			<!-- <div ng-repeat="field in fields" class="col-md-6">
+				<div class="input-group">
+					<span class="input-group-addon" id="sizing-addon2">{{field.label}}</span>
+					<input type="text" name="{{field.name}}" class="form-control"
+						placeholder="{{field.label}}" ng-model="input"
+						aria-describedby="sizing-addon2">
+				</div>
+			</div> -->
+			<div class="col-md-9" ng-repeat="field in fields" class="col-md-6">
+				<div class="input-group">
+					<span class="
+					input-group-addon" id="sizing-addon2">
+						Select a Company</span> <input type="text" ng-model="company"
+						placeholder="Company name - at least two letters" 
+						uib-typeahead="company for company in getCompaniesByName($viewValue) 
+						| limitTo:10 "
+						typeahead-loading="loadingCompanies" typeahead-min-length=2
+						typeahead-no-results="noResults" class="form-control" 
+						typeahead-on-select="getQueryResults(company)">
+				</div>
+				<i ng-show="loadingCompanies" class="glyphicon glyphicon-refresh"></i>
+				<div ng-show="noResults">
+					<i class="glyphicon glyphicon-remove"></i> No Results Found
+				</div>
+			</div>
+			<div class="col-md-9" ng-repeat="result in results">
+				<div>{{result}}</div>
+			</div>
+		</div>
+	</div>
+	<tt>{{selected}}</tt>
+</div>
+</div>
+<!--  ng-change="getScoreData(score)" -->

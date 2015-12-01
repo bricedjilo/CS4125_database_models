@@ -69,6 +69,13 @@ public class CompanyDao {
 				"city", "zip_code", "speciality_name");
 	}
 
+	public List<Map<String, String>> getCompanyByName(String companyName) throws SQLException {
+		MapSqlParameterSource params = new MapSqlParameterSource();
+		params.addValue("companyName", factories.surroundWithPercent(companyName));
+		String sql = "select * from company where LOWER(name) LIKE :companyName";
+		return factories.daoBoilerPlate(jdbc, sql, params, "name", "primary_sector");
+	}
+	
 	// Query 3; companies' labor cost
 	public List<Map<String, String>> getCompaniesLaborCost() throws SQLException {
 		String sql = "select name, sum(wages) as laborCost from (select name, "
@@ -87,4 +94,6 @@ public class CompanyDao {
 				+ "where LOWER(company.name) LIKE :companyName) t) group by name";
 		return factories.daoBoilerPlate(jdbc, sql, params, "name", "laborCost");
 	}
+
+	
 }

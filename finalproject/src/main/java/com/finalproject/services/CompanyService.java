@@ -79,5 +79,15 @@ public class CompanyService {
 			return null;
 		}
 	}
+
+	public List<Map<String, String>> getCompanyByName(String companyName) {
+		try {
+			return companyDao.getCompanyByName(companyName);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+	}
 	
 }
