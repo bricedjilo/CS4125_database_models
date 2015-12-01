@@ -2,22 +2,19 @@ package com.finalproject.domain;
 
 public class JobProfile {
 	
-	private String pos_code;
+	private String posCode;
 	private String title;
 	private String description;
 	
-	public JobProfile(String pos_code, String title, String description) {
-		this.pos_code = pos_code;
-		this.title = title;
-		this.description = description;
+	public JobProfile() {
 	}
 
-	public String getPos_code() {
-		return pos_code;
+	public String getPosCode() {
+		return posCode;
 	}
 
-	public void setPos_code(String pos_code) {
-		this.pos_code = pos_code;
+	public void setPosCode(String posCode) {
+		this.posCode = posCode;
 	}
 
 	public String getTitle() {
@@ -35,5 +32,11 @@ public class JobProfile {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
+	@Override
+	public String toString() {
+		return "JobProfile [posCode=" + posCode + ", title=" + title + ", description=" + description + "]";
+	}
+	
 	
 }

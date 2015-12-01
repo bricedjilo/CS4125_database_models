@@ -45,7 +45,7 @@ public class PersonDao {
 	// Update or save
 	public void update(int per_id, Person person) {
 		MapSqlParameterSource params = new MapSqlParameterSource();
-		String SQL = "UPDATE Person SET name = :name, email = :email, " + "gender = :gender WHERE per_id = :per_id";
+		String SQL = "UPDATE Person SET name = :name, email = :email, gender = :gender WHERE per_id = :per_id";
 		params.addValue("per_id", per_id);
 		params.addValue("name", person.getName());
 		params.addValue("email", person.getEmail());

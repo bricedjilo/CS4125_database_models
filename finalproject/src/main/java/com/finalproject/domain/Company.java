@@ -3,14 +3,14 @@ package com.finalproject.domain;
 
 public class Company {
 	
-	private int comp_id;
+	private int compId;
 	private String name;
-	private String primary_sector;
+	private String primarySector;
 	private String website;
 	
-	public Company(String name, String primary_sector, String website) {
+	public Company(String name, String primarySector, String website) {
 		this.name = name;
-		this.primary_sector = primary_sector;
+		this.primarySector = primarySector;
 		this.website = website;
 	}
 	
@@ -18,12 +18,12 @@ public class Company {
 		
 	}
 
-	public int getComp_id() {
-		return comp_id;
+	public int getCompId() {
+		return compId;
 	}
 
-	public void setComp_id(int comp_id) {
-		this.comp_id = comp_id;
+	public void setCompId(int compId) {
+		this.compId = compId;
 	}
 
 	public String getName() {
@@ -34,12 +34,12 @@ public class Company {
 		this.name = name;
 	}
 
-	public String getPrimary_sector() {
-		return primary_sector;
+	public String getPrimarySector() {
+		return primarySector;
 	}
 
-	public void setPrimary_sector(String primary_sector) {
-		this.primary_sector = primary_sector;
+	public void setPrimarySector(String primarySector) {
+		this.primarySector = primarySector;
 	}
 
 	public String getWebsite() {
@@ -52,7 +52,7 @@ public class Company {
 
 	@Override
 	public String toString() {
-		return "Company [comp_id=" + comp_id + ", name=" + name + ", primary_sector=" + primary_sector + ", website="
+		return "Company [compId=" + compId + ", name=" + name + ", primarySector=" + primarySector + ", website="
 				+ website + "]";
 	}
 	

@@ -21,7 +21,30 @@ public class CompanyService {
 	}
 	
 	public void create(Company company) {
-		companyDao.create(company);
+		try {
+			companyDao.create(company);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void update(int compId, Company company) {
+		try {
+			companyDao.update(compId, company);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void delete(int compId) {
+		try {
+			companyDao.delete(compId);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	// List all companies
@@ -50,6 +73,16 @@ public class CompanyService {
 	public List<Map<String, String>>  getCompanysLaborCost(String companyName) {
 		try {
 			return companyDao.getCompanysLaborCost(companyName);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+	}
+
+	public List<Map<String, String>> getCompanyByName(String companyName) {
+		try {
+			return companyDao.getCompanyByName(companyName);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -2,40 +2,35 @@ package com.finalproject.domain;
 
 public class Course {
 	
-	private String c_code;
+	private String cCode;
 	private String title;
-	private String course_level;
+	private String courseLevel;
 	private String description;
 	private String status;
-	private int retail_price;
+	private String retailPrice;
 	
-	public Course(String c_code, String title, String course_level, 
-			String description, String status, int retail_price) {
-		this.c_code = c_code;
-		this.title = title;
-		this.course_level = course_level;
-		this.description = description;
-		this.status = status;
-		this.retail_price = retail_price;
+	public Course(){
 	}
-	
-	public String getC_code() {
-		return c_code;
+
+	public String getcCode() {
+		return cCode;
 	}
-	public void setC_code(String c_code) {
-		this.c_code = c_code;
+
+	public void setcCode(String cCode) {
+		this.cCode = cCode;
 	}
+
 	public String getTitle() {
 		return title;
 	}
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getCourse_level() {
-		return course_level;
+	public String getCourseLevel() {
+		return courseLevel;
 	}
-	public void setCourse_level(String course_level) {
-		this.course_level = course_level;
+	public void setCourseLevel(String courseLevel) {
+		this.courseLevel = courseLevel;
 	}
 	public String getDescription() {
 		return description;
@@ -49,11 +44,18 @@ public class Course {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public int getRetail_price() {
-		return retail_price;
+	public String getRetailPrice() {
+		return retailPrice;
 	}
-	public void setRetail_price(int retail_price) {
-		this.retail_price = retail_price;
+	public void setRetailPrice(String retailPrice) {
+		this.retailPrice = retailPrice;
 	}
+
+	@Override
+	public String toString() {
+		return "Course [cCode=" + cCode + ", title=" + title + ", courseLevel=" + courseLevel + ", description="
+				+ description + ", status=" + status + ", retailPrice=" + retailPrice + "]";
+	}
+	
 	
 }
