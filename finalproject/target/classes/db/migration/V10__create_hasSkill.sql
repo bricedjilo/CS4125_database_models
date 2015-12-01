@@ -1,0 +1,111 @@
+BEGIN
+	EXECUTE IMMEDIATE 'DROP TABLE hasSkill CASCADE CONSTRAINTS'; 		
+	EXECUTE IMMEDIATE 'DROP TABLE hasSkill PURGE'; 	
+	EXCEPTION WHEN OTHERS THEN NULL;
+END;
+/
+
+CREATE TABLE hasSkill (
+	per_id 	number NOT NULL,
+	ks_code	varchar(10) NOT NULL,
+	PRIMARY KEY (per_id,ks_code),
+	foreign key (per_id) references person on delete cascade,
+	foreign key (ks_code) references knowledgeSkill on delete cascade	
+);
+
+INSERT INTO hasSkill (per_id,ks_code) VALUES (16,'DBAS1002');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (48,'DBAS1001');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (29,'DBAS3003');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (26,'LFS1001');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (34,'JAVA2002');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (14,'LFS2001');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (2,'JAVA1001');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (21,'ALGB1003');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (40,'ALGB1001');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (9,'DBAS3003');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (1,'JAVS1002');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (12,'COM2002');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (37,'ALGB1002');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (17,'JAVA2001');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (43,'ALGB1002');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (38,'RUBY1001');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (34,'FIN3000');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (6,'FIN3000');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (20,'FIN2002');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (21,'JAVA2002');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (34,'LFS2001');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (44,'LFS2001');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (35,'DBAS3003');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (39,'ALGB1002');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (9,'COM2002');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (7,'JAVS1002');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (18,'LFS2001');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (39,'COMP2001');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (26,'ALGB1001');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (10,'JAVS1002');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (44,'RUBY1001');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (36,'CSS1002');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (38,'DBAS1002');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (46,'FIN3000');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (3,'COM1001');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (7,'DBAS2002');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (29,'ALGB1001');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (1,'ALGB1001');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (34,'JAVS1002');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (1,'LFS1002');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (38,'ALGB1002');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (40,'JAVA1002');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (43,'JAVS1001');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (17,'JAVA1001');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (42,'COMP2001');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (8,'DBAS1001');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (34,'ALGB1001');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (45,'DBAS1003');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (16,'DBAS2002');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (26,'ALGB1003');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (31,'RUBY1001');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (30,'COMP2001');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (24,'FIN3000');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (27,'COM1001');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (41,'DBAS1001');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (39,'RDBMS1001');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (29,'LFS1002');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (41,'COM2002');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (31,'LFS1002');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (3,'JAVA1001');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (36,'ALGB1002');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (47,'FIN2002');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (21,'LFS1002');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (15,'LFS2001');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (46,'WDFE1001');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (45,'COM2001');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (4,'FIN2002');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (35,'LFS1002');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (21,'FIN2002');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (23,'DBAS1003');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (22,'COMP2001');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (46,'JAVA2001');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (47,'COM2001');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (39,'JAVA1002');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (44,'LFS1001');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (37,'DBAS2002');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (35,'DBAS1003');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (32,'COM2001');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (32,'LFS2001');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (29,'LFS1001');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (42,'JAVA2001');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (39,'JAVA2001');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (42,'COM2002');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (11,'JDBC1001');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (20,'JAVA1002');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (6,'COM1001');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (20,'JAVS1002');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (30,'COM1001');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (14,'COMP2001');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (51,'LFS2001');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (35,'LFS1001');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (26,'FIN2002');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (32,'JAVA2002');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (14,'JAVA2002');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (3,'DBAS2002');
+INSERT INTO hasSkill (per_id,ks_code) VALUES (46,'DBAS3003');
