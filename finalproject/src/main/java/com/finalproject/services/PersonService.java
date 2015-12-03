@@ -81,6 +81,16 @@ public class PersonService {
 	public void delete(int per_id) {
 		personDao.delete(per_id);
 	}
+
+	public List<Map<String, String>> getAEmployeeByNames(String employeeName) {
+		try {
+			return personDao.getAEmployeeByNames(employeeName);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+	}
 	
 	
 	

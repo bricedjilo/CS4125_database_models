@@ -60,7 +60,7 @@ public class CompanyController {
 		return companyService.getCompanyByName(companyName);
 	}
 
-	// query 3
+	// query 3: List companies’ labor cost (total salaries and wage rates by 1920 hours) in descending order.
 	@RequestMapping(value = "/laborcost", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	public List<Map<String, String>> getCompaniesLaborCost() {

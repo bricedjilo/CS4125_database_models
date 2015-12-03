@@ -14,10 +14,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-
 import com.finalproject.domain.Person;
 import com.finalproject.services.PersonService;
-
 
 @RestController
 @RequestMapping("/employees")
@@ -65,6 +63,13 @@ public class PersonController {
 	@ResponseBody
 	public List<Map<String, String>> getAllEmployees() {
 		return personService.getAllEmployees();
+	}
+
+	// Get an employee by name employees
+	@RequestMapping(value = "/name/{employeeName}", method = RequestMethod.GET)
+	@ResponseBody
+	public List<Map<String, String>> getAEmployeeByNames(@PathVariable String employeeName) {
+		return personService.getAEmployeeByNames(employeeName);
 	}
 
 	// query 1: List a company's workers by name

@@ -66,14 +66,22 @@ public class PersonDao {
 		return factories.daoBoilerPlate(jdbc, sql, null, "per_id", "name", "email", "gender", "phone_number",
 				"phone_type", "street", "city", "zip_code", "state");
 	}
+	
+	// Get Employees BY NAME
+	public List<Map<String, String>> getAEmployeeByNames(String employeeName) throws SQLException {
+		MapSqlParameterSource params = new MapSqlParameterSource();
+		params.addValue("employeeName", factories.surroundWithPercent(employeeName));
+		String sql = "select per_id, name from person WHERE LOWER(name) LIKE :employeeName";
+		return factories.daoBoilerPlate(jdbc, sql, params, "per_id", "name");
+	}
 
 	// Query 1
 	public List<Map<String, String>> getAllPersonsByCompanyName(String companyName) throws SQLException {
 		MapSqlParameterSource params = new MapSqlParameterSource();
 		params.addValue("companyName", factories.surroundWithPercent(companyName));
-		String sql = "select person.per_id, person.name, t.comp_id, t.name as comp_name "
-				+ "from (select * from company natural join works " + "where LOWER(company.name) LIKE :companyName) t "
-				+ "join person on (person.per_id = t.per_id) order by person.name ASC";
+		String sql = "select DISTINCT person.per_id, person.name, t.comp_id, t.name as comp_name "
+				+ "from (select * from company natural join works " + "where LOWER(company.name) LIKE :companyName) t, "
+				+ "person WHERE (person.per_id = t.per_id) order by person.name ASC";
 		return factories.daoBoilerPlate(jdbc, sql, params, "per_id", "name", "comp_id", "comp_name");
 	}
 
@@ -112,5 +120,7 @@ public class PersonDao {
 				+ "join works natural join person";
 		return factories.daoBoilerPlate(jdbc, sql, params, "per_id", "name", "comp_id", "title", "project_id");
 	}
+
+	
 
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="dbApp">
+<html lang="en" >
 
 <head>
 
@@ -33,7 +33,7 @@
 
 </head>
 
-<body>
+<body ng-app="dbApp">
 	<!-- Navigation -->
 	<nav class="navbar navbar-inverse navbar-fixed-top topnav"
 		role="navigation">
@@ -80,6 +80,7 @@
 		<!-- /.container -->
 	</nav>
 	
+	
 	<div class="container" style="margin-top: 130px;">
 	<div ng-view></div>
 	</div>
@@ -88,6 +89,8 @@
 	
 	<!-- Footer -->
 	<!-- <div ng-include src="'includes/footer.html'">-->
+
+
 
 	<!-- jQuery -->
 	<script src="/static/lib/js/jquery.js"></script>
