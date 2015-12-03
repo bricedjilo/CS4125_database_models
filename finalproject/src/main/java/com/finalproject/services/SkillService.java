@@ -122,4 +122,14 @@ public class SkillService {
 			return null;
 		}
 	}
+
+	public List<Map<String, String>> getMissingSkillsByEmployeeNameAndJobCode(String employeeName, String job_code) {
+		try {
+			return skillDao.getMissingSkillsByEmployeeNameAndJobCode(employeeName, job_code);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+	}
 }

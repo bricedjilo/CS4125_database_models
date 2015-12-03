@@ -98,7 +98,7 @@ public class SkillController {
 	public List<Map<String, String>> getSkillsByJobProfileCode(@PathVariable String jobProfileCode) {
 		return skillService.getSkillsByJobProfileCode(jobProfileCode);
 	}
-	
+
 	// Query 8: List the required knowledge/skills of a job profile in a
 	// readable format. BY specific TITLE
 	@RequestMapping(value = "/jobprofile/title/{jobProfileTitle}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -114,6 +114,15 @@ public class SkillController {
 	public List<Map<String, String>> getMissingSkillsByEmployeeIdAndJobCode(@PathVariable int per_id,
 			@PathVariable String job_code) {
 		return skillService.getMissingSkillsByEmployeeIdAndJobCode(per_id, job_code);
+	}
+
+	// Query 9: List a person’s missing knowledge/skills for a specific job in a
+	// readable format.
+	@RequestMapping(value = "/gaps/employee/name/job/{employeeName}/{job_code}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseBody
+	public List<Map<String, String>> getMissingSkillsByEmployeeNameAndJobCode(@PathVariable String employeeName,
+			@PathVariable String job_code) {
+		return skillService.getMissingSkillsByEmployeeNameAndJobCode(employeeName, job_code);
 	}
 
 }

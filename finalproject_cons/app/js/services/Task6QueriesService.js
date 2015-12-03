@@ -11,95 +11,106 @@ dbApp.factory('Task6QueriesService', function ($http, $resource, $q) {
                             label: "Select a company",
                             name: "companyName",
                             additionalInfo: "name",
-                            attributes: {Name:"name",CompId:"comp_id",PersonId:"per_id"},
+                            attributes: {Name: "name", CompId: "comp_id", PersonId: "per_id"},
                             urlAdditionalInfo: this.makeUrl('http://csci4125.cfapps.io/companies/name/')(""),
                             urlFinalQuery: this.makeUrl('http://csci4125.cfapps.io/employees/companies/')(""),
                             isAdditionalInputNeeded: true
                         }];
-                case 2: 
+                case 2:
                     return [{
                             placeholder: "Company name - at least two letters",
                             label: "Select a company",
                             name: "companyName",
                             additionalInfo: "name",
-                            attributes: {Name:"name",
-                                PersonId:"per_id",payRate:"pay_rate",payType:"Pay_type"},
+                            attributes: {Name: "name",
+                                PersonId: "per_id", payRate: "pay_rate", payType: "Pay_type"},
                             urlAdditionalInfo: this.makeUrl('http://csci4125.cfapps.io/companies/name/')(""),
                             urlFinalQuery: this.makeUrl('http://csci4125.cfapps.io/employees/companies/')("/salary/"),
                             isAdditionalInputNeeded: true
                         }];
-                case 3: 
+                case 3:
                     return [{
                             placeholder: "",
                             label: "",
                             name: "",
                             additionalInfo: "",
-                            attributes: {Company:"name",LaborCost:"laborCost"},
+                            attributes: {Company: "name", LaborCost: "laborCost"},
                             urlAdditionalInfo: "",
                             urlFinalQuery: this.makeUrl('http://csci4125.cfapps.io/companies/laborcost/')(""),
                             isAdditionalInputNeeded: false
                         }];
-                case 4: 
+                case 4:
                     return [{
                             placeholder: "Employee name - at least two letters",
                             label: "Select a person",
                             name: "employeeName",
                             additionalInfo: "name",
-                            attributes: {Name:"name",
-                                PersonId:"per_id",JobCode:"job_code",Title:"title",CompId:"comp_id"},
+                            attributes: {Name: "name",
+                                PersonId: "per_id", JobCode: "job_code", Title: "title", CompId: "comp_id"},
                             urlAdditionalInfo: this.makeUrl('http://csci4125.cfapps.io/employees/name/')(""),
                             urlFinalQuery: this.makeUrl('http://csci4125.cfapps.io/jobs/holds/')(""),
                             isAdditionalInputNeeded: true
                         }];
-                case 5: 
+                case 5:
                     return [{
                             placeholder: "Project title - at least two letters",
                             label: "Select a project",
                             name: "projectName",
                             additionalInfo: "title",
-                            attributes: {Name:"name",CompId:"comp_id",Project:"title",Employee:"per_id"},
+                            attributes: {Name: "name", CompId: "comp_id", Project: "title", Employee: "per_id"},
                             urlAdditionalInfo: this.makeUrl('http://csci4125.cfapps.io/projects/name/')(""),
                             urlFinalQuery: this.makeUrl('http://csci4125.cfapps.io/employees/projects/')(""),
                             isAdditionalInputNeeded: true
                         }];
-                case 6: 
+                case 6:
                     return [{
                             placeholder: "Person's name - at least two letters",
                             label: "Select a person",
                             name: "personName",
                             additionalInfo: "name",
-                            attributes: {Name:"name",Skill:"title",Level:"skill_level"},
+                            attributes: {Name: "name", Skill: "title", Level: "skill_level"},
                             urlAdditionalInfo: this.makeUrl('http://csci4125.cfapps.io/employees/name/')(""),
                             urlFinalQuery: this.makeUrl('http://csci4125.cfapps.io/skills/employee/name/')(""),
                             isAdditionalInputNeeded: true
                         }];
-                case 7: 
+                case 7:
                     return [{
                             placeholder: "Worker's name - at least two letters",
                             label: "Select a worker",
                             name: "workerName",
                             additionalInfo: "name",
-                            attributes: {PersonID:"per_id", SkillGapCode:"ks_code",Title:"title",Level:"skill_level"},
+                            attributes: {PersonID: "per_id", SkillGapCode: "ks_code", Title: "title", Level: "skill_level"},
                             urlAdditionalInfo: this.makeUrl('http://csci4125.cfapps.io/employees/name/')(""),
                             urlFinalQuery: this.makeUrl('http://csci4125.cfapps.io/skills/currentgaps/employee/name/')(""),
                             isAdditionalInputNeeded: true
                         }];
-                case 8: 
+                case 8:
                     return [{
                             placeholder: "Job profile title - at least two letters",
                             label: "Select a job Profile",
                             name: "jobProfileName",
                             additionalInfo: "title",
-                            attributes: {SkillCode:"ks_code",Title:"title",Level:"skill_level"},
+                            attributes: {SkillCode: "ks_code", Title: "title", Level: "skill_level"},
+                            urlAdditionalInfo: this.makeUrl('http://csci4125.cfapps.io/jobprofiles/title/')(""),
+                            urlFinalQuery: this.makeUrl('http://csci4125.cfapps.io/skills/jobprofile/title/')(""),
+                            isAdditionalInputNeeded: true
+                        }];
+                case 9:
+                    return [{
+                            placeholder: "Job profile title - at least two letters",
+                            label: "Select a job Profile",
+                            name: "jobProfileName",
+                            additionalInfo: "title",
+                            attributes: {SkillCode: "ks_code", Title: "title", Level: "skill_level"},
                             urlAdditionalInfo: this.makeUrl('http://csci4125.cfapps.io/jobprofiles/title/')(""),
                             urlFinalQuery: this.makeUrl('http://csci4125.cfapps.io/skills/jobprofile/')(""),
                             isAdditionalInputNeeded: true
                         }];
             }
         },
-        makeUrl: function(base){
-            return function(param1) {
-                return function(param2){
+        makeUrl: function (base) {
+            return function (param1) {
+                return function (param2) {
                     return base + param2 + param1;
                 };
             };
@@ -116,18 +127,18 @@ dbApp.factory('Task6QueriesService', function ($http, $resource, $q) {
             console.log(field);
             var param = item || "";
             return $http.get(field.urlFinalQuery(param.trim()))
-                .then(function (response) {
-                    return response.data.map(function (item) {
-                       return item;
+                    .then(function (response) {
+                        return response.data.map(function (item) {
+                            return item;
+                        });
                     });
-                });
         },
-        mapToAttributes: function(attributes, items) {
-            return items.map(function(item){
-                return Object.keys(attributes).map(function(key){
-                     console.log(attributes['project_id']);
-                    return key +": " + item[attributes[key]];
-                   
+        mapToAttributes: function (attributes, items) {
+            return items.map(function (item) {
+                return Object.keys(attributes).map(function (key) {
+                    console.log(attributes['project_id']);
+                    return key + ": " + item[attributes[key]];
+
                 });
             });
         },
@@ -244,7 +255,7 @@ dbApp.factory('Task6QueriesService', function ($http, $resource, $q) {
                 qid: 30,
                 query: "30. Find the courses that can help most jobless people find a job by training them toward the job profiles that have the most openings due to lack of qualified workers."
             }
-            
+
         ]
     };
 

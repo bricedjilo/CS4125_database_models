@@ -163,4 +163,15 @@ public class SkillDao {
 		return factories.daoBoilerPlate(jdbc, sql, params, "ks_code", "title", "skill_level");
 	}
 
+	public List<Map<String, String>> getMissingSkillsByEmployeeNameAndJobCode(String employeeName, String job_code) throws SQLException {
+		MapSqlParameterSource params = new MapSqlParameterSource();
+		params.addValue("job_code", factories.surroundWithPercent(job_code));
+		params.addValue("employeeName", factories.surroundWithPercent(employeeName));
+		String sql = "select ks_code, title, skill_level from jobs natural join requiredskill "
+				+ "natural join knowledgeskill where LOWER(job_code) LIKE :job_code MINUS "
+				+ "select ks_code, title, skill_level from person natural join hasskill "
+				+ "natural join knowledgeskill where LOWER(name) = :employeeName";
+		return factories.daoBoilerPlate(jdbc, sql, params, "ks_code", "title", "skill_level");
+	}
+
 }
