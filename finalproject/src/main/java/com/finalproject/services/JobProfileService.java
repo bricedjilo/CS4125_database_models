@@ -1,5 +1,9 @@
 package com.finalproject.services;
 
+import java.sql.SQLException;
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,6 +31,16 @@ public class JobProfileService {
 	
 	public void delete(String posCode) {
 		jobProfileDao.delete(posCode);		
+	}
+
+	public List<Map<String, String>> getJobProfileByTitle(String jobProfileTitle) {
+		try {
+			return jobProfileDao.getJobProfileByTitle(jobProfileTitle);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 }

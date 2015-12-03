@@ -79,9 +79,20 @@ dbApp.factory('Task6QueriesService', function ($http, $resource, $q) {
                             label: "Select a worker",
                             name: "workerName",
                             additionalInfo: "name",
-                            attributes: {Name:"name",Skill:"title",Level:"skill_level"},
+                            attributes: {PersonID:"per_id", SkillGapCode:"ks_code",Title:"title",Level:"skill_level"},
                             urlAdditionalInfo: this.makeUrl('http://csci4125.cfapps.io/employees/name/')(""),
                             urlFinalQuery: this.makeUrl('http://csci4125.cfapps.io/skills/currentgaps/employee/name/')(""),
+                            isAdditionalInputNeeded: true
+                        }];
+                case 8: 
+                    return [{
+                            placeholder: "Job profile title - at least two letters",
+                            label: "Select a job Profile",
+                            name: "jobProfileName",
+                            additionalInfo: "title",
+                            attributes: {SkillCode:"ks_code",Title:"title",Level:"skill_level"},
+                            urlAdditionalInfo: this.makeUrl('http://csci4125.cfapps.io/jobprofiles/title/')(""),
+                            urlFinalQuery: this.makeUrl('http://csci4125.cfapps.io/skills/jobprofile/')(""),
                             isAdditionalInputNeeded: true
                         }];
             }
@@ -104,7 +115,7 @@ dbApp.factory('Task6QueriesService', function ($http, $resource, $q) {
         getQueryResults: function (item, field) {
             console.log(field);
             var param = item || "";
-            return $http.get(field.urlFinalQuery(param.split(",")[0].trim()))
+            return $http.get(field.urlFinalQuery(param.trim()))
                 .then(function (response) {
                     return response.data.map(function (item) {
                        return item;

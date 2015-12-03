@@ -1,6 +1,8 @@
 package com.finalproject.dao;
 
+import java.sql.SQLException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.sql.DataSource;
@@ -57,6 +59,14 @@ public class JobProfileDao {
 		String SQL = "DELETE FROM JobProfile WHERE pos_code = :posCode";
 		SqlParameterSource params = new MapSqlParameterSource("posCode", posCode);
 		jdbc.update(SQL, params);
+	}
+
+	public List<Map<String, String>> getJobProfileByTitle(String jobProfileTitle) throws SQLException {
+		MapSqlParameterSource params = new MapSqlParameterSource();
+		params.addValue("jobProfileTitle", factories.surroundWithPercent(jobProfileTitle));
+		String sql = "select pos_code, title from jobProfile WHERE LOWER(title) "
+				+ "LIKE :jobProfileTitle";
+		return factories.daoBoilerPlate(jdbc, sql, params, "pos_code", "title");
 	}
 
 }

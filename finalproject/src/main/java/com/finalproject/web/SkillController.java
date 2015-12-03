@@ -98,6 +98,14 @@ public class SkillController {
 	public List<Map<String, String>> getSkillsByJobProfileCode(@PathVariable String jobProfileCode) {
 		return skillService.getSkillsByJobProfileCode(jobProfileCode);
 	}
+	
+	// Query 8: List the required knowledge/skills of a job profile in a
+	// readable format. BY specific TITLE
+	@RequestMapping(value = "/jobprofile/title/{jobProfileTitle}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseBody
+	public List<Map<String, String>> getSkillsByJobProfileTitle(@PathVariable String jobProfileTitle) {
+		return skillService.getSkillsByJobProfileTitle(jobProfileTitle);
+	}
 
 	// Query 9: List a person’s missing knowledge/skills for a specific job in a
 	// readable format.

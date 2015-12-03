@@ -112,4 +112,14 @@ public class SkillService {
 			return null;
 		}
 	}
+
+	public List<Map<String, String>> getSkillsByJobProfileTitle(String jobProfileTitle) {
+		try {
+			return skillDao.getSkillsByJobProfileTitle(jobProfileTitle);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+	}
 }

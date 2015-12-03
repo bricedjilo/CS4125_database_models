@@ -1,18 +1,22 @@
 package com.finalproject.web;
 
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.finalproject.domain.JobProfile;
 import com.finalproject.services.JobProfileService;
 
 @RestController
-@RequestMapping("/jobprofile")
+@RequestMapping("/jobprofiles")
 public class JobProfileController {
 
 	private JobProfileService jobProfileService;
@@ -38,6 +42,13 @@ public class JobProfileController {
 	@RequestMapping(value = "/delete/{posCode}", method = RequestMethod.DELETE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public void delete(@PathVariable String posCode) {
 		jobProfileService.delete(posCode);
+	}
+
+	// Get jobProfile by title
+	@RequestMapping(value = "/title/{jobProfileTitle}", method = RequestMethod.GET)
+	@ResponseBody
+	public List<Map<String, String>> getJobProfileByTitle(@PathVariable String jobProfileTitle) {
+		return jobProfileService.getJobProfileByTitle(jobProfileTitle);
 	}
 
 }
