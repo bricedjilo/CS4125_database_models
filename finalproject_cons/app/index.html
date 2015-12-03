@@ -52,8 +52,8 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><a ng-href="#home">Home</a></li>
 
-
-                        <li role="presentation" class="dropdown"><a
+                        <li><a ng-href="#services">Services</a></li>
+<!--                        <li role="presentation" class="dropdown"><a
                                 class="dropdown-toggle" data-toggle="dropdown" 
                                 role="button" aria-haspopup="true" aria-expanded="false">
                                         Services <span class="caret"></span>
@@ -65,7 +65,7 @@
                                 <li role="separator" class="divider"></li>
                                 <li><a ng-href="#">Companies</a></li>
                             </ul>
-                        </li>
+                        </li>-->
                         <li><a ng-href="#task6_queries">Queries: Task 6</a></li>
                     </ul>
                 </div>
@@ -75,17 +75,22 @@
 		<!-- /.container -->
 	</nav>
 	
-        <div class="container" style="margin-top: 6%;">
+        
+        <div>
+        <div class="container" style="margin-top: 6%; ">
             <div ng-view></div>
         </div>
 
+    
         
         
         
         
         
-        
-        
+        <!-- Contact -->
+	<div style="margin-top: 40%;" ng-include src="'includes/contact.html'"></div>
+    
+        </div>
         
         
         
@@ -112,6 +117,8 @@
         <script src="/js/dbApp.js"></script>
         <script src="/js/controllers/personController.js"></script>
         <script src="/js/controllers/task6QueriesController.js"></script>
+        <script src="/js/controllers/servicesController.js"></script>
         <script src="/js/services/Task6QueriesService.js"></script>
+        <script src="/js/services/servicesService.js"></script>
     </body>
 </html>

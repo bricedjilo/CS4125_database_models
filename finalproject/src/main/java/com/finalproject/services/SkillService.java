@@ -102,4 +102,14 @@ public class SkillService {
 			return null;
 		}
 	}
+
+	public List<Map<String, String>> getAllCurrentSkillGapsByEmployeeName(String employeeName) {
+		try {
+			return skillDao.getAllCurrentSkillGapsByEmployeeName(employeeName);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+	}
 }

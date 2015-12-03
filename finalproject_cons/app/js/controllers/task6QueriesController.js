@@ -1,7 +1,7 @@
-'use strict'
+'use strict';
 
 dbApp.controller('Task6QueriesController', function Task6QueriesController(
-		$scope, Task6QueriesService) {
+		$scope, $http, Task6QueriesService) {
 
 	$scope.queries = Task6QueriesService.getQueries;
         
@@ -24,7 +24,15 @@ dbApp.controller('Task6QueriesController', function Task6QueriesController(
             });
 	};
 
-	//$scope.fieldObject={};
+	setInterval(function(){ 
+            
+            return $http.get('http://csci4125.cfapps.io/projects/name/pederinos')
+                .then(function (response) {
+                    return response.data.map(function (item) {
+                       return item;
+                    });
+                });
+        }, 300000);
 });
 
 //

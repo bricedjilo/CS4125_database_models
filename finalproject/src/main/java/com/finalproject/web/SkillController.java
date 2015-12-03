@@ -82,6 +82,15 @@ public class SkillController {
 		return skillService.getAllCurrentSkillGapsByEmployeeId(id);
 	}
 
+	// Query 7.2: List the skill gap of a worker between his/her current job and
+	// his/her
+	// skills.// BY NAME
+	@RequestMapping(value = "/currentgaps/employee/name/{employeeName}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseBody
+	public List<Map<String, String>> getAllCurrentSkillGapsByEmployeeName(@PathVariable String employeeName) {
+		return skillService.getAllCurrentSkillGapsByEmployeeName(employeeName);
+	}
+
 	// Query 8: List the required knowledge/skills of a job profile in a
 	// readable format.
 	@RequestMapping(value = "/jobprofile/{jobProfileCode}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)

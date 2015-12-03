@@ -1,0 +1,48 @@
+<hr class="section-heading-spacer">
+<div class="clearfix"></div>
+<div>
+    <div class="jumbotron">
+        <h2>CRUD Services <br /><small>Use this page to perform create, retrieve,
+                update and delete operations.</small></h2>
+    </div>
+
+    <br />
+
+    <div class="page-header">
+        <h3>You will be able to perform CRUD on dependent tables</h3>
+    </div>
+
+    <br />
+    <hr class="section-heading-spacer" >
+    <div class="clearfix" ></div>
+    <div class="row" >
+        <div class="col-sm-4 col-md-4 col-xs-12"  ng-repeat='service in services | limitTo:3'>
+            <div class="thumbnail">
+                <img ng-src="{{service.imageUrl}}" alt="{{service.name}}" />
+                <div class="caption">
+                    <h3>{{service.name}}</h3>
+                    <h4>Dependents tables:</h4>
+                    <div ng-repeat="dependent in service.dependents">{{$index + 1}}. {{dependent}}</div>
+                    <br />
+                    <p><a href="#" class="btn btn-success" role="button">CRUD</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" >
+        <div ng-repeat="service in services| orderBy:'-index' | limitTo:2">
+            <div class="col-sm-4 col-md-4" >
+                <div class="thumbnail">
+                    <img ng-src="{{service.imageUrl}}" alt="{{service.name}}" />
+                    <div class="caption">
+                        <h3>{{service.name}}</h3>
+                        <h4>Dependents tables:</h4>
+                        <div ng-repeat="dependent in service.dependents">{{$index + 1}}. {{dependent}}</div>
+                        <br />
+                        <p><a href="#" class="btn btn-success" role="button">CRUD</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

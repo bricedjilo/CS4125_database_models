@@ -109,6 +109,25 @@ public class SkillDao {
 				+ "from person natural join hasskill natural join knowledgeskill where per_id = :id";
 		return factories.daoBoilerPlate(jdbc, sql, params, "title", "skill_level");
 	}
+	
+	// // Query 7.2: List the skill gap of a worker between his/her current jobs
+	// and his/her skills. By NAME
+	public List<Map<String, String>> getAllCurrentSkillGapsByEmployeeName(String employeeName) throws SQLException {
+		MapSqlParameterSource params = new MapSqlParameterSource();
+		params.addValue("employeeName", factories.surroundWithPercent(employeeName));
+		//String sql = "SELECT per_id FROM person WHERE LOWER(name) LIKE :employeeName";
+		String sql = "WITH current_jobs as (select name, person.per_id, pos_code from "
+				+ "person,works,jobs where LOWER(name) LIKE :employeeName and "
+				+ "end_date >= (select CURRENT_DATE from dual) and person.per_id = works.per_id "
+				+ "and jobs.job_code=works.job_code), "
+				+ "skills as (select * from knowledgeSkill natural join requiredSkill) "
+				+ "SELECT ks_code, per_id, title, skill_level from current_jobs natural join "
+				+ "skills "
+				+ "MINUS select hasskill.ks_code, person.per_id, title, skill_level from "
+				+ "person, hasskill, knowledgeskill WHERE LOWER(name) LIKE :employeeName "
+				+ "and person.per_id = hasSkill.per_id order by per_id";
+		return factories.daoBoilerPlate(jdbc, sql, params, "ks_code","per_id","title","skill_level");
+	}
 
 	// Query 8: List the required knowledge/skills of a job profile in a
 	// readable format.By pos_code
@@ -133,5 +152,7 @@ public class SkillDao {
 				+ "natural join knowledgeskill where per_id = :per_id";
 		return factories.daoBoilerPlate(jdbc, sql, params, "ks_code", "title", "skill_level");
 	}
+
+	
 
 }

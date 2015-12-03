@@ -9,6 +9,10 @@ dbApp.config(['$routeProvider', function($routeProvider) {
     .when('/home', {
         templateUrl: 'templates/home.html'
      })
+     .when('/services', {
+       templateUrl: 'templates/services.html',
+       controller: 'ServicesController'
+    }) 
     .when('/employees', {
        templateUrl: 'templates/person.html',
        controller: 'PersonController'
