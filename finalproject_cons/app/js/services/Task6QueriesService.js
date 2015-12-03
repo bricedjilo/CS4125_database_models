@@ -97,13 +97,16 @@ dbApp.factory('Task6QueriesService', function ($http, $resource, $q) {
                         }];
                 case 9:
                     return [{
-                            placeholder: "Job profile title - at least two letters",
-                            label: "Select a job Profile",
-                            name: "jobProfileName",
-                            additionalInfo: "title",
+                            placeholder: ["Employee name - at least two letters", "Job code - at least two letters"],
+                            label: ["Select an employee", "Select a job code"],
+                            name: ["employeeName", "jobCode"],
+                            additionalInfo: ["name", "job_code"],
                             attributes: {SkillCode: "ks_code", Title: "title", Level: "skill_level"},
-                            urlAdditionalInfo: this.makeUrl('http://csci4125.cfapps.io/jobprofiles/title/')(""),
-                            urlFinalQuery: this.makeUrl('http://csci4125.cfapps.io/skills/jobprofile/')(""),
+                            urlAdditionalInfo: [
+                                this.makeUrl('http://csci4125.cfapps.io/employees/name/')(""),
+                                this.makeUrl('http://csci4125.cfapps.io/jobprofiles/title/')("")
+                            ],
+                            urlFinalQuery: this.makeUrl('http://csci4125.cfapps.io/skills/gaps/employeename/jobcode/')(""),
                             isAdditionalInputNeeded: true
                         }];
             }

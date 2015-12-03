@@ -69,6 +69,7 @@ public class CompanyDao {
 				"city", "zip_code", "speciality_name");
 	}
 
+	// get Companies by Name
 	public List<Map<String, String>> getCompanyByName(String companyName) throws SQLException {
 		MapSqlParameterSource params = new MapSqlParameterSource();
 		params.addValue("companyName", factories.surroundWithPercent(companyName));

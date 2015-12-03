@@ -79,4 +79,12 @@ public class JobsDao {
 				});
 	}
 
+	// Get jobs by jobCode
+	public List<Map<String, String>> getJobsByCode(String jobCode) throws SQLException {
+		MapSqlParameterSource params = new MapSqlParameterSource();
+		params.addValue("jobCode", factories.surroundWithPercent(jobCode));
+		String sql = "select job_code, comp_id from jobs where LOWER(job_code) LIKE :jobCode";
+		return factories.daoBoilerPlate(jdbc, sql, params, "job_code", "comp_id");
+	}
+
 }

@@ -31,6 +31,13 @@ public class JobsController {
 		return jobsService.getAllJobs();
 	}
 
+	// List all jobs
+	@RequestMapping(value = "/jobcode/{jobCode}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseBody
+	public List<Map<String, String>> getJobsByCode(@PathVariable String jobCode) {
+		return jobsService.getJobsByCode(jobCode);
+	}
+
 	// Query 4: Find all the jobs a person is currently holding.// BY NAME
 	@RequestMapping(value = "/holds/{employeeName}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody

@@ -65,7 +65,7 @@ public class PersonController {
 		return personService.getAllEmployees();
 	}
 
-	// Get an employee by name employees
+	// Get an employee by name
 	@RequestMapping(value = "/name/{employeeName}", method = RequestMethod.GET)
 	@ResponseBody
 	public List<Map<String, String>> getAEmployeeByNames(@PathVariable String employeeName) {

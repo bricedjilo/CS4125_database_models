@@ -163,6 +163,8 @@ public class SkillDao {
 		return factories.daoBoilerPlate(jdbc, sql, params, "ks_code", "title", "skill_level");
 	}
 
+	// Query: 9.. List a person’s missing knowledge/skills for a specific job in
+		// a readable format. BY employeeName and job_code
 	public List<Map<String, String>> getMissingSkillsByEmployeeNameAndJobCode(String employeeName, String job_code) throws SQLException {
 		MapSqlParameterSource params = new MapSqlParameterSource();
 		params.addValue("job_code", factories.surroundWithPercent(job_code));

@@ -118,7 +118,7 @@ public class SkillController {
 
 	// Query 9: List a person’s missing knowledge/skills for a specific job in a
 	// readable format.
-	@RequestMapping(value = "/gaps/employee/name/job/{employeeName}/{job_code}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/gaps/employeename/jobcode/{employeeName}/{job_code}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	public List<Map<String, String>> getMissingSkillsByEmployeeNameAndJobCode(@PathVariable String employeeName,
 			@PathVariable String job_code) {
