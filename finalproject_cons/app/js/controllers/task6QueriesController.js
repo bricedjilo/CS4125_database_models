@@ -41,15 +41,15 @@ dbApp.controller('Task6QueriesController', function Task6QueriesController(
 
         
 
-	setInterval(function(){ 
-            
-            return $http.get('http://csci4125.cfapps.io/projects/name/pederinos')
-                .then(function (response) {
-                    return response.data.map(function (item) {
-                       return item;
-                    });
-                });
-        }, 300000);
+//	setInterval(function(){ 
+//            
+//            return $http.get('http://csci4125.cfapps.io/projects/name/pederinos')
+//                .then(function (response) {
+//                    return response.data.map(function (item) {
+//                       return item;
+//                    });
+//                });
+//        }, 300000);
 });
 
 //
