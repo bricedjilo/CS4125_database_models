@@ -16,24 +16,24 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-12" ng-repeat="field in fields" ng-init="fieldObject=field">
+                <div class="col-md-12" ng-repeat="field in fields" >
                     <div ng-if="field.isAdditionalInputNeeded">
                         <div class="input-group">
-                            <span class="input-group-addon" id="sizing-addon3">{{field.label}}</span> 
+                            <span class="input-group-addon btn btn-warning" id="sizing-addon3">{{field.label}}</span> 
                             <input type="text" ng-model="item"
                                    placeholder="{{field.placeholder}}" 
-                                   uib-typeahead="item for item in getAdditionalInput($viewValue, field)" 
+                                   uib-typeahead="item for item in getAdditionalInput($viewValue,field)" 
 
                                    typeahead-loading="loadingCompanies" typeahead-min-length=2
                                    typeahead-no-results="noResults" class="form-control" 
-                                   typeahead-on-select="getQueryResults(item,field)">
+                                   typeahead-on-select="getQueryResults(item,field,$index)">
                         </div>
                         <i ng-show="loadingCompanies" class="glyphicon glyphicon-refresh"></i>
                         <div ng-show="noResults">
                             <i class="glyphicon glyphicon-remove"></i> No Results Found
                         </div>
-                    </div>
-                    <div ng-if="!field.isAdditionalInputNeeded" ng-init="getQueryResults(null,field)"> </div>
+                    </div><br />
+                    <div ng-if="!field.isAdditionalInputNeeded" ng-init="getQueryResults(null,field,null)"> </div>
                 </div>
             </div>
             <div>

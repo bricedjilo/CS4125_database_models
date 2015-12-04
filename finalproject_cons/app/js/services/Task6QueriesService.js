@@ -14,7 +14,8 @@ dbApp.factory('Task6QueriesService', function ($http, $resource, $q) {
                             attributes: {Name: "name", CompId: "comp_id", PersonId: "per_id"},
                             urlAdditionalInfo: this.makeUrl('http://csci4125.cfapps.io/companies/name/')(""),
                             urlFinalQuery: this.makeUrl('http://csci4125.cfapps.io/employees/companies/')(""),
-                            isAdditionalInputNeeded: true
+                            isAdditionalInputNeeded: true,
+                            numberOfAdditionalInfo: 1
                         }];
                 case 2:
                     return [{
@@ -26,7 +27,8 @@ dbApp.factory('Task6QueriesService', function ($http, $resource, $q) {
                                 PersonId: "per_id", payRate: "pay_rate", payType: "Pay_type"},
                             urlAdditionalInfo: this.makeUrl('http://csci4125.cfapps.io/companies/name/')(""),
                             urlFinalQuery: this.makeUrl('http://csci4125.cfapps.io/employees/companies/')("/salary/"),
-                            isAdditionalInputNeeded: true
+                            isAdditionalInputNeeded: true,
+                            numberOfAdditionalInfo: 1
                         }];
                 case 3:
                     return [{
@@ -37,7 +39,8 @@ dbApp.factory('Task6QueriesService', function ($http, $resource, $q) {
                             attributes: {Company: "name", LaborCost: "laborCost"},
                             urlAdditionalInfo: "",
                             urlFinalQuery: this.makeUrl('http://csci4125.cfapps.io/companies/laborcost/')(""),
-                            isAdditionalInputNeeded: false
+                            isAdditionalInputNeeded: false,
+                            numberOfAdditionalInfo: 0
                         }];
                 case 4:
                     return [{
@@ -49,7 +52,8 @@ dbApp.factory('Task6QueriesService', function ($http, $resource, $q) {
                                 PersonId: "per_id", JobCode: "job_code", Title: "title", CompId: "comp_id"},
                             urlAdditionalInfo: this.makeUrl('http://csci4125.cfapps.io/employees/name/')(""),
                             urlFinalQuery: this.makeUrl('http://csci4125.cfapps.io/jobs/holds/')(""),
-                            isAdditionalInputNeeded: true
+                            isAdditionalInputNeeded: true,
+                            numberOfAdditionalInfo: 1        
                         }];
                 case 5:
                     return [{
@@ -60,7 +64,8 @@ dbApp.factory('Task6QueriesService', function ($http, $resource, $q) {
                             attributes: {Name: "name", CompId: "comp_id", Project: "title", Employee: "per_id"},
                             urlAdditionalInfo: this.makeUrl('http://csci4125.cfapps.io/projects/name/')(""),
                             urlFinalQuery: this.makeUrl('http://csci4125.cfapps.io/employees/projects/')(""),
-                            isAdditionalInputNeeded: true
+                            isAdditionalInputNeeded: true,
+                            numberOfAdditionalInfo: 1
                         }];
                 case 6:
                     return [{
@@ -71,7 +76,8 @@ dbApp.factory('Task6QueriesService', function ($http, $resource, $q) {
                             attributes: {Name: "name", Skill: "title", Level: "skill_level"},
                             urlAdditionalInfo: this.makeUrl('http://csci4125.cfapps.io/employees/name/')(""),
                             urlFinalQuery: this.makeUrl('http://csci4125.cfapps.io/skills/employee/name/')(""),
-                            isAdditionalInputNeeded: true
+                            isAdditionalInputNeeded: true,
+                            numberOfAdditionalInfo: 1
                         }];
                 case 7:
                     return [{
@@ -82,7 +88,8 @@ dbApp.factory('Task6QueriesService', function ($http, $resource, $q) {
                             attributes: {PersonID: "per_id", SkillGapCode: "ks_code", Title: "title", Level: "skill_level"},
                             urlAdditionalInfo: this.makeUrl('http://csci4125.cfapps.io/employees/name/')(""),
                             urlFinalQuery: this.makeUrl('http://csci4125.cfapps.io/skills/currentgaps/employee/name/')(""),
-                            isAdditionalInputNeeded: true
+                            isAdditionalInputNeeded: true,
+                            numberOfAdditionalInfo: 1
                         }];
                 case 8:
                     return [{
@@ -93,22 +100,33 @@ dbApp.factory('Task6QueriesService', function ($http, $resource, $q) {
                             attributes: {SkillCode: "ks_code", Title: "title", Level: "skill_level"},
                             urlAdditionalInfo: this.makeUrl('http://csci4125.cfapps.io/jobprofiles/title/')(""),
                             urlFinalQuery: this.makeUrl('http://csci4125.cfapps.io/skills/jobprofile/title/')(""),
-                            isAdditionalInputNeeded: true
+                            isAdditionalInputNeeded: true,
+                            numberOfAdditionalInfo: 1
                         }];
                 case 9:
                     return [{
-                            placeholder: ["Employee name - at least two letters", "Job code - at least two letters"],
-                            label: ["Select an employee", "Select a job code"],
-                            name: ["employeeName", "jobCode"],
-                            additionalInfo: ["name", "job_code"],
-                            attributes: {SkillCode: "ks_code", Title: "title", Level: "skill_level"},
-                            urlAdditionalInfo: [
-                                this.makeUrl('http://csci4125.cfapps.io/employees/name/')(""),
-                                this.makeUrl('http://csci4125.cfapps.io/jobprofiles/title/')("")
-                            ],
+                            placeholder: "Employee name - at least two letters",
+                            label: "Select an employee",
+                            name: "employeeName",
+                            additionalInfo: "name",
+                            attributes: {Name: "ks_code", Title: "title", Level: "skill_level"},
+                            urlAdditionalInfo: this.makeUrl('http://csci4125.cfapps.io/employees/name/')(""),
                             urlFinalQuery: this.makeUrl('http://csci4125.cfapps.io/skills/gaps/employeename/jobcode/')(""),
-                            isAdditionalInputNeeded: true
-                        }];
+                            isAdditionalInputNeeded: true,
+                            numberOfAdditionalInfo: 2
+                        },
+                        {   
+                            placeholder: "Job code - at least two letters",
+                            label: "Select a job code",
+                            name: "jobCode",
+                            additionalInfo: "job_code",
+                            attributes: {SkillCode: "ks_code", Title: "title", Level: "skill_level"},
+                            urlAdditionalInfo: this.makeUrl('http://csci4125.cfapps.io/jobs/jobcode/')(""),
+                            urlFinalQuery: this.makeUrl('http://csci4125.cfapps.io/skills/gaps/employeename/jobcode/')(""),
+                            isAdditionalInputNeeded: true,
+                            numberOfAdditionalInfo: 2
+                        }
+                    ];
             }
         },
         makeUrl: function (base) {
@@ -119,29 +137,27 @@ dbApp.factory('Task6QueriesService', function ($http, $resource, $q) {
             };
         },
         getAdditionalInput: function (val, field) {
-            return $http.get(field.urlAdditionalInfo(val.trim()))
-                    .then(function (response) {
-                        return response.data.slice(0, 8).map(function (item) {
-                            return item[field.additionalInfo];
-                        });
+            return $http.get((field.urlAdditionalInfo)(val.trim()))
+                .then(function (response) {
+                    return response.data.slice(0, 8).map(function (item) {
+                        return item[field.additionalInfo];
                     });
+                });
         },
         getQueryResults: function (item, field) {
             console.log(field);
             var param = item || "";
             return $http.get(field.urlFinalQuery(param.trim()))
-                    .then(function (response) {
-                        return response.data.map(function (item) {
-                            return item;
-                        });
+                .then(function (response) {
+                    return response.data.map(function (item) {
+                        return item;
                     });
+                });
         },
         mapToAttributes: function (attributes, items) {
             return items.map(function (item) {
                 return Object.keys(attributes).map(function (key) {
-                    console.log(attributes['project_id']);
                     return key + ": " + item[attributes[key]];
-
                 });
             });
         },
