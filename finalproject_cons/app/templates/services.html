@@ -24,7 +24,7 @@
                     <h4>Dependents tables:</h4>
                     <div ng-repeat="dependent in service.dependents">{{$index + 1}}. {{dependent}}</div>
                     <br />
-                    <p><a href="#" class="btn btn-success" role="button">CRUD</a></p>
+                    <p><a href="#{{service.crudPage}}" class="btn btn-success" role="button">CRUD</a></p>
                 </div>
             </div>
         </div>
@@ -39,7 +39,7 @@
                         <h4>Dependents tables:</h4>
                         <div ng-repeat="dependent in service.dependents">{{$index + 1}}. {{dependent}}</div>
                         <br />
-                        <p><a href="#" class="btn btn-success" role="button">CRUD</a></p>
+                        <p><a ng-href="#{{service.crudPage}}" class="btn btn-success" role="button">CRUD</a></p>
                     </div>
                 </div>
             </div>

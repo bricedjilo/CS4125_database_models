@@ -10,39 +10,44 @@ dbApp.factory('servicesService', function ($http, $resource, $q) {
                 imageUrl: "/img/worker.jpg",
                 dependents: [
                     "Phone", "EmployeeAddress", "Takes", "Works", "HasSkill"
-                ]
+                ],
+                crudPage: "person_crud"
             },
             {
                 index: 1,
                 name:"Companies",
-                imageUrl:"/img/worker.jpg",
+                imageUrl:"/img/company.jpg",
                 dependents: [
                     "CompanyAddress", "Speciality", "Project", "Jobs", "IsAssigned"
-                ]
+                ],
+                crudPage: "company_crud"
             },
             {
                 index: 2,
                 name:"Courses",
-                imageUrl:"/img/worker.jpg",
+                imageUrl:"/img/courses.jpg",
                 dependents: [
                     "Section", "TrainingForSkills", "Prerequisites", "  ", ".  "
-                ]
+                ],
+                crudPage: "courses_crud"
             },
             {
                 index: 3,
                 name:"Job Profiles",
-                imageUrl:"/img/worker.jpg",
+                imageUrl:"/img/jobprofile.jpg",
                 dependents: [
                     "Jobs", 'RequiredSkill', " "
-                ]
+                ],
+                crudPage: "jobprofile_crud"
             },
             {
                 index: 4,
                 name:"Knowledge or Skills",
-                imageUrl:"/img/worker.jpg",
+                imageUrl:"/img/skills.jpg",
                 dependents: [
                     'HasSkill', "TrainingForSkill", "RequiredSkill"
-                ]
+                ],
+                crudPage: "skills_crud"
             }
             
         ]

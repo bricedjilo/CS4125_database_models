@@ -2,7 +2,7 @@
     display: none;
 }
 
-
+.bootstrap-iso .formden_header h2, .bootstrap-iso .formden_header p, .bootstrap-iso form{font-family: Arial, Helvetica, sans-serif; color: black}.bootstrap-iso form button, .bootstrap-iso form button:hover{color: white !important;} .asteriskField{color: red;}
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
 
 body,
@@ -11,6 +11,7 @@ html {
     height: 100%;
     margin:0;
     padding:0;
+    background-color: #FDFDEF;
 }
 
 body,

@@ -1,0 +1,273 @@
+<hr class="section-heading-spacer">
+<div class="clearfix"></div>
+<h2>Person CRUD Operations</h2>
+<div>
+
+    <hr />
+    <br/>
+    <div class='row'>
+        <div class="col-md-6 col-xs-12">
+            <h3>Create</h3>
+
+
+            <div class="bootstrap-iso">
+
+
+                <form method="post">
+                    <div class="form-group ">
+                        <label class="control-label requiredField" for="personId">
+                            Name
+                            <span class="asteriskField">
+                                *
+                            </span>
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-user">
+                                </i>
+                            </div>
+                            <input class="form-control" id="personId" name="personId" placeholder="name" type="text"/>
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <label class="control-label requiredField" for="email">
+                            email
+                            <span class="asteriskField">
+                                *
+                            </span>
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-envelope">
+                                </i>
+                            </div>
+                            <input class="form-control" id="email" name="email" placeholder="email@something.com" type="text"/>
+                        </div>
+                    </div>
+                    <div class="form-group" id="div_radio">
+                        <label class="control-label requiredField" for="radio">
+                            gender
+                            <span class="asteriskField">
+                                *
+                            </span>
+                        </label>
+                        <div class="">
+                            <label class="radio-inline">
+                                <input name="radio" type="radio" value="Male"/>
+                                Male
+                            </label>
+                            <label class="radio-inline">
+                                <input name="radio" type="radio" value="Female"/>
+                                Female
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <button class="btn btn-success " name="submit" type="submit">
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+
+            </div>
+        </div>
+        <div class="col-md-6 col-xs-12">
+            <h3>Retrieve</h3>
+            <div class="bootstrap-iso">
+
+                <form method="post">
+                    <div class="form-group ">
+                        <label class="control-label requiredField" for="id_name">
+                            By ID or Name
+                            <span class="asteriskField">
+                                *
+                            </span>
+                        </label>
+                        <select class="select form-control" id="id_name" name="id_name">
+                            <option value="ID">
+                                ID
+                            </option>
+                            <option value="Name">
+                                Name
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group ">
+                        <label class="control-label requiredField" for="personId">
+                            ID/Name
+                            <span class="asteriskField">
+                                *
+                            </span>
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-user">
+                                </i>
+                            </div>
+                            <input class="form-control" id="personId" name="personId" placeholder="Id/name" type="text"/>
+                        </div>
+                    </div>
+                    <div class="form-group" id="div_radio">
+                        <label class="control-label requiredField" for="radio">
+                            gender
+                            <span class="asteriskField">
+                                *
+                            </span>
+                        </label>
+                        <div class="" style="visibility: hidden">
+                            <label class="radio-inline">
+                                <input name="radio" type="radio" value="Male"/>
+                                Male
+                            </label>
+                            <label class="radio-inline">
+                                <input name="radio" type="radio" value="Female"/>
+                                Female
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <button class="btn btn-success " name="submit" type="submit">
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+
+            </div>
+
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-md-6 col-xs-12">
+            <h4>Update</h4>
+            <div class="bootstrap-iso">
+
+                <form method="post">
+                    <div class="form-group ">
+                        <label class="control-label requiredField" for="update_id">
+                            ID
+                            <span class="asteriskField">
+                                *
+                            </span>
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-user">
+                                </i>
+                            </div>
+                            <input class="form-control" id="update_id" name="update_id" placeholder="enter an id" type="text"/>
+                        </div>
+                        <span class="help-block" id="hint_update_id">
+                            must be an integer
+                        </span>
+                    </div>
+                    <div class="form-group ">
+                        <label class="control-label requiredField" for="email">
+                            Email
+                            <span class="asteriskField">
+                                *
+                            </span>
+                        </label>
+                        <input class="form-control" id="email" name="email" 
+                               type="text" placeholder="username@something.com"/>
+                    </div>
+                    <div class="form-group" id="div_gender_update">
+                        <label class="control-label requiredField" for="gender_update">
+                            Gender
+                            <span class="asteriskField">
+                                *
+                            </span>
+                        </label>
+                        <div class="">
+                            <label class="radio-inline">
+                                <input name="gender_update" type="radio" value="Male"/>
+                                Male
+                            </label>
+                            <label class="radio-inline">
+                                <input name="gender_update" type="radio" value="Female"/>
+                                Female
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <button class="btn btn-success " name="submit" type="submit">
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+        <div class="col-md-6 col-xs-12">
+            <h4>Delete</h4>
+            <div class="bootstrap-iso">
+
+                <form method="post">
+                    <div class="form-group ">
+                        <label class="control-label requiredField" for="update_id">
+                            ID
+                            <span class="asteriskField">
+                                *
+                            </span>
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-user">
+                                </i>
+                            </div>
+                            <input class="form-control" id="update_id" name="update_id" placeholder="enter an id" type="text"/>
+                        </div>
+                        <span class="help-block" id="hint_update_id">
+                            must be an integer
+                        </span>
+                    </div>
+                    <div class="form-group " style="visibility: hidden">
+                        <label class="control-label requiredField" for="email">
+                            Email
+                            <span class="asteriskField">
+                                *
+                            </span>
+                        </label>
+                        <input class="form-control" id="email" name="email" 
+                               type="text" placeholder="username@something.com"/>
+                    </div>
+                    <div class="form-group" id="div_gender_update" style="visibility: hidden">
+                        <label class="control-label requiredField" for="gender_update">
+                            Gender
+                            <span class="asteriskField">
+                                *
+                            </span>
+                        </label>
+                        <div class="">
+                            <label class="radio-inline">
+                                <input name="gender_update" type="radio" value="Male"/>
+                                Male
+                            </label>
+                            <label class="radio-inline">
+                                <input name="gender_update" type="radio" value="Female"/>
+                                Female
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <button class="btn btn-success " name="submit" type="submit">
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+</div>

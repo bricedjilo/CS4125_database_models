@@ -16,7 +16,7 @@ public class App {
 	//	flyway.setBaselineOnMigrate(true);
 	//	flyway.setBaselineDescription("Baseline Version");
 	//	flyway.setSchemas("dbrice");
-		
+		flyway.repair();
 		flyway.migrate();
 		SpringApplication.run(App.class, args);
 		

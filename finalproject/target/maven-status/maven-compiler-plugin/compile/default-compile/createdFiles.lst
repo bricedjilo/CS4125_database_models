@@ -14,6 +14,7 @@ com\finalproject\domain\JobProfile.class
 com\finalproject\services\PersonService.class
 com\finalproject\services\CompanyService.class
 com\finalproject\web\OrderController.class
+com\finalproject\web\ProjectController.class
 com\finalproject\domain\Order.class
 com\finalproject\App.class
 com\finalproject\domain\Person.class
@@ -33,5 +34,7 @@ com\finalproject\dao\PersonDao.class
 com\finalproject\web\CompanyController.class
 com\finalproject\dao\JobsDao$2.class
 com\finalproject\dao\CompanyDao.class
+com\finalproject\services\ProjectService.class
+com\finalproject\dao\ProjectDao.class
 com\finalproject\utility\Fallbacks.class
 com\finalproject\dao\SkillDao.class

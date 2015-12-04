@@ -16,7 +16,11 @@ dbApp.config(['$routeProvider', function($routeProvider) {
     .when('/employees', {
        templateUrl: 'templates/person.html',
        controller: 'PersonController'
-    })    
+    })   
+    .when('/person_crud', {
+       templateUrl: 'templates/person_crud.html',
+       controller: 'PersonController'
+    }) 
     .when('/task6_queries', {
        templateUrl: 'templates/task6_queries.html',
        controller: 'Task6QueriesController'
