@@ -7,7 +7,7 @@
     <br/>
     <div class="row">
         <div class="col-md-3" ng-repeat="operation in operations" >
-            <a ng-href="#{{operation.path}}"><span class="{{operation.active}}" 
+            <a ng-href="#{{operation.path}}"><span ng-class="status(operation.name)" 
             style="font-size: 1.2em;">{{operation.name}}</span></a> 
         </div>
     </div>
@@ -53,7 +53,7 @@
                                 </i>
                             </div>
                             <input ng-model="crud.person.email" class="form-control" 
-                                   name="email" placeholder="email@something.com" type="email" required />
+                                   name="email" placeholder="email@something.com" id="email" type="email" required />
                         </div>
                         <div ng-messages="person_create_form.email.$error" style="color:maroon" role="alert">
                             <div ng-message="required">You did not enter an email</div>
@@ -69,7 +69,7 @@
                         </label>
                         <div  class="">
                             <label class="radio-inline">
-                                <input ng-model="crud.person.gender" name="radio" type="radio" value="Male" required/>
+                                <input ng-model="crud.person.gender" id="radio" name="radio" type="radio" value="Male" required/>
                                 Male
                             </label>
                             <label class="radio-inline">
@@ -92,7 +92,7 @@
                                 <td>Name: {{result.name}}</td>
                                 <td>Gender: {{result.gender}}</td>
                             </tr>
-                            <tr ng-show="results.error" style="color:maroon">
+                            <tr ng-show="results.length===0" style="color:maroon">
                                 <td><h4>User was not created</h4></td>
                             </tr>
                         </tbody>
@@ -106,6 +106,8 @@
         <div class="form-group">
             <div >
                 <button ng-disabled="(person_create_form.name.$error.required 
+                            || person_create_form.name.$error.minlength
+                    || person_create_form.name.$error.maxlength
                             || person_create_form.email.$error.required 
                         || person_create_form.radio.$error.required)" 
                     ng-click='create(crud)' class="btn btn-success " 

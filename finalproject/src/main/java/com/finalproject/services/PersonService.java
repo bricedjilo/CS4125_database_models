@@ -14,29 +14,29 @@ import com.finalproject.domain.Person;
 
 @Service("personService")
 public class PersonService {
-	
+
 	private PersonDao personDao;
-	
+
 	@Autowired
 	public void setPersonDao(PersonDao personDao) {
 		this.personDao = personDao;
 	}
-	
-	public List<Map<String,String>> create(Person person) {
+
+	public List<Map<String, String>> create(Person person) {
 		try {
 			personDao.create(person);
 			return personDao.getRecentlyCreatedPerson();
 		} catch (Exception e) {
-			List<Map<String,String>> list = new ArrayList<>();
-			Map<String, String>map = new HashMap<>();
-			map.put("error","Person was not created. The database could not be accessed");
+			List<Map<String, String>> list = new ArrayList<>();
+			Map<String, String> map = new HashMap<>();
+			map.put("error", "Person was not created. The database could not be accessed");
 			list.add(map);
 			return list;
 		}
-		
+
 	}
 
-	public List<Map<String,String>> getAllEmployees() {
+	public List<Map<String, String>> getAllEmployees() {
 		try {
 			return personDao.getAllEmployees();
 		} catch (SQLException e) {
@@ -45,8 +45,8 @@ public class PersonService {
 			return null;
 		}
 	}
-	
-	public List<Map<String, String>>  getPersonsByCompanyName(String companyName) {
+
+	public List<Map<String, String>> getPersonsByCompanyName(String companyName) {
 		try {
 			return personDao.getAllPersonsByCompanyName(companyName);
 		} catch (SQLException e) {
@@ -55,8 +55,8 @@ public class PersonService {
 			return null;
 		}
 	}
-	
-	public List<Map<String, String>>  getEmployeesByCompanyNameAndPayType(String companyName, String pay_type) {
+
+	public List<Map<String, String>> getEmployeesByCompanyNameAndPayType(String companyName, String pay_type) {
 		try {
 			return personDao.getEmployeesByCompanyNameAndPayType(companyName, pay_type);
 		} catch (SQLException e) {
@@ -75,7 +75,7 @@ public class PersonService {
 			return null;
 		}
 	}
-	
+
 	public List<Map<String, String>> getAllEmployeesByProjectId(int id) {
 		try {
 			return personDao.getAllEmployeesByProjectId(id);
@@ -86,8 +86,23 @@ public class PersonService {
 		}
 	}
 
-	public void update(int per_id, Person person) {
-		personDao.update(per_id, person);
+	public List<Map<String, String>> update(int per_id, Person person) {
+		try {
+			personDao.update(per_id, person);
+		} catch (Exception e) {
+			List<Map<String, String>> list = new ArrayList<>();
+			Map<String, String> map = new HashMap<>();
+			map.put("error", "Person was not updated. The database could not be accessed");
+			list.add(map);
+			return list;
+		}
+
+		try {
+			return personDao.getAEmployeeById(per_id);
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	public void delete(int per_id) {
@@ -112,7 +127,5 @@ public class PersonService {
 			return null;
 		}
 	}
-	
-	
-	
+
 }

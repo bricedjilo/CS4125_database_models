@@ -6,14 +6,14 @@
     <hr />
     <br/>
     <div class="row">
-        <div class="col-md-3" ng-repeat="operation in operations">
-            <a ng-href="#{{operation.path}}"><span class="{{operation.active}}" 
+        <div class="col-md-3" ng-repeat="operation in operations" >
+            <a ng-href="#{{operation.path}}"><span class="{{status(operation.name)}}" 
                                                    style="font-size: 1.2em;">{{operation.name}}</span></a> 
         </div>
     </div>
     <hr />
     <h3>Updqte</h3>
-    <form>
+    <form name="person_update_form" ng-init="crud.name = 'update'" novalidate>
         <div class='row'>
             <div class="bootstrap-iso">
                 <div class="col-md-6 col-xs-12">
@@ -29,48 +29,116 @@
                                 <i class="fa fa-user">
                                 </i>
                             </div>
-                            <input class="form-control" id="update_id" name="update_id" placeholder="enter an id" type="text"/>
+                            <input type="number" class="form-control" id="update_id" 
+                                   name="personId" ng-model="crud.id"
+                                   ng-pattern="/^[1-9][0-9]*$/" autocomplete="off"
+                                   placeholder="Id"  required />
                         </div>
-                        <span class="help-block" id="hint_update_id">
-                            must be an integer
-                        </span>
+                        <div ng-messages="person_update_form.personId.$error" 
+                             style="color:maroon" role="alert">
+                            <div ng-message="required">You did not enter an ID</div>
+                            <div ng-message="pattern">ID must be greater than zero</div>
+                        </div>
                     </div>
                     <div class="form-group ">
-                        <label class="control-label requiredField" for="email">
-                            Email
+                        <label class="control-label requiredField" for="personId">
+                            Name
                             <span class="asteriskField">
                                 *
                             </span>
                         </label>
-                        <input class="form-control" id="email" name="email" 
-                               type="text" placeholder="username@something.com"/>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-user">
+                                </i>
+                            </div>
+                            <input ng-model="crud.person.name" class="form-control" 
+                                   name="name" placeholder="name" type="text" 
+                                   ng-minlength="3" ng-maxlength="20" required />
+                        </div>
+                        <div ng-messages="person_update_form.name.$error" 
+                             style="color:maroon" role="alert">
+                            <div ng-message="required">You did not enter a name</div>
+                            <div ng-message="minlength">Your name is too short</div>
+                            <div ng-message="maxlength">Your name is too long</div>
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <label class="control-label requiredField" for="email">
+                            email
+                            <span class="asteriskField">
+                                *
+                            </span>
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-envelope">
+                                </i>
+                            </div>
+                            <input ng-model="crud.person.email" class="form-control" 
+                                   name="email" placeholder="email@something.com" id="email" type="email" required />
+                        </div>
+                        <div ng-messages="person_update_form.email.$error" style="color:maroon" role="alert">
+                            <div ng-message="required">You did not enter an email</div>
+                            <div ng-message="email">Your email address is invalid</div>
+                        </div>
                     </div>
                     <div class="form-group" id="div_gender_update">
-                        <label class="control-label requiredField" for="gender_update">
+                        <label class="control-label requiredField" for="radio1">
                             Gender
                             <span class="asteriskField">
                                 *
                             </span>
                         </label>
-                        <div class="">
+                        <div >
                             <label class="radio-inline">
-                                <input name="gender_update" type="radio" value="Male"/>
+                                <input ng-model="crud.person.gender" id="radio" name="radio" type="radio" value="Male" required/>
                                 Male
                             </label>
                             <label class="radio-inline">
-                                <input name="gender_update" type="radio" value="Female"/>
+                                <input ng-model="crud.person.gender" id="radio" name="radio" type="radio" value="Female" required/>
                                 Female
                             </label>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div>
-                            <button class="btn btn-success " name="submit" type="submit">
-                                Submit
-                            </button>
+                        <br />
+                        <div ng-messages="person_update_form.radio.$error" style="color:maroon" role="alert">
+                            <div ng-message="required">Please select the gender</div>
                         </div>
                     </div>
                 </div>
+                <div class="col-md-6 col-xs-12">
+                    <table class="table table-condensed table-hover">
+                        <tbody>
+                            <tr ng-repeat="result in results track by $index">
+                                <td>{{$index + 1}}</td>
+                                <td>ID: {{result.per_id}}</td>
+                                <td>Name: {{result.name}}</td>
+                                <td>Gender: {{result.gender}}</td>
+                            </tr>
+                            <tr ng-if="" style="color: red">
+                                <td>error: {{}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>  
+            </div>
+        </div>
+        <hr />
+
+        <div class="form-group">
+            <div>
+                <button ng-disabled="(person_update_form.name.$error.required 
+                            || person_update_form.name.$error.minlength
+                    || person_update_form.name.$error.maxlength
+                            || person_update_form.email.$error.required 
+                        || person_update_form.radio.$error.required) 
+                    || (person_update_form.personId.$error.required
+                                    || person_update_form.personId.$error.pattern
+                                    || person_update_form.id_name.$error.required)" 
+                        ng-click='update(crud)' class="btn btn-success " 
+                        name="submit" type="submit">
+                    Submit
+                </button>
             </div>
         </div>
     </form>

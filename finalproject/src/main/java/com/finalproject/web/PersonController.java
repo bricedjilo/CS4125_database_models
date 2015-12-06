@@ -50,8 +50,8 @@ public class PersonController {
 
 	// Update a Person's info
 	@RequestMapping(value = "/update/{per_id}", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public void update(@RequestBody Person person, @PathVariable int per_id) {
-		personService.update(per_id, person);
+	public List<Map<String, String>> update(@RequestBody Person person, @PathVariable int per_id) {
+		return personService.update(per_id, person);
 	}
 
 	// Delete a Person

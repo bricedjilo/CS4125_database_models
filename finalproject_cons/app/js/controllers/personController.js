@@ -5,6 +5,10 @@ dbApp.controller('PersonController', function PersonController(PersonService, $h
     //$scope.crud;
     $scope.operations = PersonService.getOperations;
 
+    $scope.status = function (operationName) {
+        return PersonService.getActivationClass(operationName);
+    };
+
     $scope.activate = function (crud) {
         if ($location.url().indexOf(crud.operation)) {
             crud.active = "label label-success";
@@ -16,22 +20,27 @@ dbApp.controller('PersonController', function PersonController(PersonService, $h
 //        $scope.thisOperation = operation.name;
 //    };
 
-    
+
     $scope.create = function (crud) {
         console.log(crud);
-        PersonService.post(crud).then(function(item){
+        PersonService.post(crud).then(function (item) {
             $scope.results = item;
         });
         console.log($scope.results);
-
     };
 
-    
     $scope.retrieve = function (crud) {
         console.log(crud);
-        $scope.results = PersonService.get(crud).then(function (item) {
+        PersonService.get(crud).then(function (item) {
             $scope.results = item;
-        });        
+        });
+    };
+
+    $scope.update = function (crud) {
+        console.log(crud);
+        PersonService.put(crud).then(function (item) {
+            $scope.results = item;
+        });
     };
 
 

@@ -7,8 +7,8 @@
     <br/>
     <div class="row">
         <div class="col-md-3" ng-repeat="operation in operations">
-            <a ng-href="#{{operation.path}}"><span class="{{operation.active}}" 
-                                                   style="font-size: 1.2em;">{{operation.name}}</span></a> 
+            <a ng-href="#{{operation.path}}"><span class="{{status(operation.name)}}" 
+                style="font-size: 1.2em;">{{operation.name}}</span></a> 
         </div>
     </div>
     <hr />
