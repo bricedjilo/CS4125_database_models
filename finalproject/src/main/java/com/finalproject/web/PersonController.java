@@ -7,6 +7,7 @@ import java.util.Map;
 import org.eclipse.jetty.servlets.CrossOriginFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.finalproject.domain.Person;
 import com.finalproject.services.PersonService;
 
+//@CrossOrigin(origins = "localhost:8000/#/person_crud_create", maxAge = 3600)
 @RestController
 @RequestMapping("/employees")
 public class PersonController {
@@ -40,10 +42,10 @@ public class PersonController {
 		return persons;
 	}
 
-	// Insert a new Person
+	// Insert/Create a new Person
 	@RequestMapping(value = "/create", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public void create(@RequestBody Person person) {
-		personService.create(person);
+	public List<Map<String, String>> create(@RequestBody Person person) {
+		return personService.create(person);
 	}
 
 	// Update a Person's info
@@ -70,6 +72,13 @@ public class PersonController {
 	@ResponseBody
 	public List<Map<String, String>> getAEmployeeByNames(@PathVariable String employeeName) {
 		return personService.getAEmployeeByNames(employeeName);
+	}
+
+	// Get an employee by ID
+	@RequestMapping(value = "/id/{id}", method = RequestMethod.GET)
+	@ResponseBody
+	public List<Map<String, String>> getAEmployeeById(@PathVariable int id) {
+		return personService.getAEmployeeById(id);
 	}
 
 	// query 1: List a company's workers by name

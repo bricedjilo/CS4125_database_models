@@ -11,7 +11,7 @@ dbApp.factory('servicesService', function ($http, $resource, $q) {
                 dependents: [
                     "Phone", "EmployeeAddress", "Takes", "Works", "HasSkill"
                 ],
-                crudPage: "person_crud"
+                crudPage: "person_crud_create"
             },
             {
                 index: 1,

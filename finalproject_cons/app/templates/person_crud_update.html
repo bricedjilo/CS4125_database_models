@@ -1,0 +1,77 @@
+<hr class="section-heading-spacer">
+<div class="clearfix"></div>
+<h2>Person CRUD Operations</h2>
+<div>
+
+    <hr />
+    <br/>
+    <div class="row">
+        <div class="col-md-3" ng-repeat="operation in operations">
+            <a ng-href="#{{operation.path}}"><span class="{{operation.active}}" 
+                                                   style="font-size: 1.2em;">{{operation.name}}</span></a> 
+        </div>
+    </div>
+    <hr />
+    <h3>Updqte</h3>
+    <form>
+        <div class='row'>
+            <div class="bootstrap-iso">
+                <div class="col-md-6 col-xs-12">
+                    <div class="form-group ">
+                        <label class="control-label requiredField" for="update_id">
+                            ID
+                            <span class="asteriskField">
+                                *
+                            </span>
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-user">
+                                </i>
+                            </div>
+                            <input class="form-control" id="update_id" name="update_id" placeholder="enter an id" type="text"/>
+                        </div>
+                        <span class="help-block" id="hint_update_id">
+                            must be an integer
+                        </span>
+                    </div>
+                    <div class="form-group ">
+                        <label class="control-label requiredField" for="email">
+                            Email
+                            <span class="asteriskField">
+                                *
+                            </span>
+                        </label>
+                        <input class="form-control" id="email" name="email" 
+                               type="text" placeholder="username@something.com"/>
+                    </div>
+                    <div class="form-group" id="div_gender_update">
+                        <label class="control-label requiredField" for="gender_update">
+                            Gender
+                            <span class="asteriskField">
+                                *
+                            </span>
+                        </label>
+                        <div class="">
+                            <label class="radio-inline">
+                                <input name="gender_update" type="radio" value="Male"/>
+                                Male
+                            </label>
+                            <label class="radio-inline">
+                                <input name="gender_update" type="radio" value="Female"/>
+                                Female
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <button class="btn btn-success " name="submit" type="submit">
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,134 @@
+<hr class="section-heading-spacer">
+<div class="clearfix"></div>
+<h2>Person CRUD Operations</h2>
+<div>
+
+    <hr />
+    <br/>
+    <div class="row">
+        <div class="col-md-3" ng-repeat="operation in operations">
+            <a ng-href="#{{operation.path}}"><span class="{{operation.active}}" 
+                                                   style="font-size: 1.2em;">{{operation.name}}</span></a> 
+        </div>
+    </div>
+    <hr />
+    <h3>Retrieve</h3>
+    <form name="person_retrieve_form" method="post" ng-init="crud.name = 'retrieve'" novalidate>
+        <div class="row">
+            <div class="bootstrap-iso">
+                <div class="col-md-6 col-xs-12">
+                    <div class="form-group ">
+                        <label class="control-label requiredField" for="id_name">
+                            By ID or Name
+                            <span class="asteriskField">
+                                *
+                            </span>
+                        </label>
+                        <select ng-model="crud.person.param" class="select form-control" 
+                                id="id_name" name="id_name" required>
+                            <option value="">
+
+                            </option>
+                            <option value="id">
+                                id
+                            </option>
+                            <option value="name">
+                                name
+                            </option>
+                        </select>
+                        <div ng-messages="person_retrieve_form.id_name.$error" 
+                             style="color:maroon" role="alert">
+                            <div ng-message="required">You did not select a name/ID</div>
+                        </div>
+                    </div>
+                    <div ng-show="crud.person.param === 'id'" class="form-group ">
+                        <label class="control-label requiredField" for="personId">
+                            ID
+                            <span class="asteriskField">
+                                *
+                            </span>
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-user">
+                                </i>
+                            </div>
+                            <input type="number" class="form-control" id="personId" 
+                                   name="personId" ng-model="crud.person.id"
+                                   ng-pattern="/^[1-9][0-9]*$/"
+                                   placeholder="Id"  required />
+                        </div>
+                        <div ng-messages="person_retrieve_form.personId.$error" 
+                             style="color:maroon" role="alert">
+                            <div ng-message="required">You did not enter an ID</div>
+                            <div ng-message="pattern">ID must be greater than zero</div>
+                        </div>
+                    </div>
+                    <div ng-show="crud.person.param === 'name'" class="form-group ">
+                        <label class="control-label requiredField" for="personName">
+                            Name
+                            <span class="asteriskField">
+                                *
+                            </span>
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-user">
+                                </i>
+                            </div>
+                            <input type="text" class="form-control" id="personName" 
+                                   name="personName" ng-model="crud.person.name"
+                                   placeholder="name" ng-minlength="3" ng-maxlength="20"  required />
+                        </div>
+                        <div ng-messages="person_retrieve_form.personName.$error" 
+                             style="color:maroon" role="alert">
+                            <div ng-message="required">You did not enter a name</div>
+                            <div ng-message="minlength">Your name is too short</div>
+                            <div ng-message="maxlength">Your name is too long</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <table class="table table-condensed table-hover">
+                        <tbody>
+                            <tr ng-repeat="result in results track by $index">
+                                <td>{{$index + 1}}</td>
+                                <td>ID: {{result.per_id}}</td>
+                                <td>Name: {{result.name}}</td>
+                                <td>Gender: {{result.gender}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="form-group" ng-show="crud.person.param === 'id'">
+            <div>
+                <button  ng-disabled="(person_retrieve_form.personId.$error.required
+                                    || person_retrieve_form.personId.$error.pattern
+                                    || person_retrieve_form.id_name.$error.required)"
+
+                    ng-click="retrieve(crud)" class="btn btn-success " name="submit" type="submit">
+                    Submit
+                </button>
+            </div>
+        </div>
+        <div class="form-group" ng-show="crud.person.param === 'name'">
+            <div>
+                <button  ng-disabled="(person_retrieve_form.id_name.$error.required
+                                    || person_retrieve_form.personName.$error.required
+                                    || person_retrieve_form.personName.$error.minlength
+                                    || person_retrieve_form.personName.$error.maxlength)"
+
+                         ng-click="retrieve(crud)" class="btn btn-success " name="submit" type="submit">
+                    Submit
+                </button>
+            </div>
+        </div>
+
+
+
+    </form>
+
+</div>

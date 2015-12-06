@@ -1,0 +1,127 @@
+<hr class="section-heading-spacer">
+<div class="clearfix"></div>
+<h2>Person CRUD Operations</h2>
+<div>
+
+    <hr />
+    <br/>
+    <div class="row">
+        <div class="col-md-3" ng-repeat="operation in operations" >
+            <a ng-href="#{{operation.path}}"><span class="{{operation.active}}" 
+            style="font-size: 1.2em;">{{operation.name}}</span></a> 
+        </div>
+    </div>
+    <hr />
+    <h3>Create</h3>
+    <form name="person_create_form" method="post" novalidate ng-init="crud.name = 'create'">
+        <div class='row'>
+            <div class="bootstrap-iso">
+                <div class="col-md-6 col-lg-6 col-xs-12">
+                    <div class="form-group ">
+                        <label class="control-label requiredField" for="personId">
+                            Name
+                            <span class="asteriskField">
+                                *
+                            </span>
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-user">
+                                </i>
+                            </div>
+                            <input ng-model="crud.person.name" class="form-control" 
+                                   name="name" placeholder="name" type="text" 
+                                   ng-minlength="3" ng-maxlength="20" required />
+                        </div>
+                        <div ng-messages="person_create_form.name.$error" 
+                             style="color:maroon" role="alert">
+                            <div ng-message="required">You did not enter a name</div>
+                            <div ng-message="minlength">Your name is too short</div>
+                            <div ng-message="maxlength">Your name is too long</div>
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <label class="control-label requiredField" for="email">
+                            email
+                            <span class="asteriskField">
+                                *
+                            </span>
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-envelope">
+                                </i>
+                            </div>
+                            <input ng-model="crud.person.email" class="form-control" 
+                                   name="email" placeholder="email@something.com" type="email" required />
+                        </div>
+                        <div ng-messages="person_create_form.email.$error" style="color:maroon" role="alert">
+                            <div ng-message="required">You did not enter an email</div>
+                            <div ng-message="email">Your email address is invalid</div>
+                        </div>
+                    </div>
+                    <div class="form-group" id="div_radio">
+                        <label class="control-label requiredField" for="radio">
+                            gender
+                            <span class="asteriskField">
+                                *
+                            </span>
+                        </label>
+                        <div  class="">
+                            <label class="radio-inline">
+                                <input ng-model="crud.person.gender" name="radio" type="radio" value="Male" required/>
+                                Male
+                            </label>
+                            <label class="radio-inline">
+                                <input ng-model="crud.person.gender" name="radio" type="radio" value="Female" required/>
+                                Female
+                            </label>
+                        </div>
+                    </div>
+                    <div ng-messages="person_create_form.radio.$error" style="color:maroon" role="alert">
+                        <div ng-message="required">Please select the gender</div>
+                    </div>
+                     <br />
+                </div>
+                <div class="col-md-6 col-lg-6 col-xs-12">
+                    <table class="table table-condensed table-hover">
+                        <tbody>
+                            <tr ng-repeat="result in results track by $index">
+                                <td>{{$index + 1}}</td>
+                                <td>ID: {{result.per_id}}</td>
+                                <td>Name: {{result.name}}</td>
+                                <td>Gender: {{result.gender}}</td>
+                            </tr>
+                            <tr ng-show="results.error" style="color:maroon">
+                                <td><h4>User was not created</h4></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+           
+        </div>
+
+        <hr />
+        <div class="form-group">
+            <div >
+                <button ng-disabled="(person_create_form.name.$error.required 
+                            || person_create_form.email.$error.required 
+                        || person_create_form.radio.$error.required)" 
+                    ng-click='create(crud)' class="btn btn-success " 
+                    name="submit" type="submit">
+                    Submit
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+
+
+
+
+
+

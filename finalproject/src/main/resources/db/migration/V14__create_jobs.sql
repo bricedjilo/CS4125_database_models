@@ -17,6 +17,8 @@ CREATE TABLE jobs (
 	foreign key (pos_code) references jobProfile on delete cascade
 );
 
+
+
 INSERT INTO jobs (job_code,comp_id,job_type,pay_rate,pay_type,pos_code) VALUES ('IRC6B2',44,'part-time',80,'wage','U4N9E4');
 INSERT INTO jobs (job_code,comp_id,job_type,pay_rate,pay_type,pos_code) VALUES ('DRC4G5',43,'full-time',60000,'salary','S1N9T4');
 INSERT INTO jobs (job_code,comp_id,job_type,pay_rate,pay_type,pos_code) VALUES ('VGD9R2',9,'full-time',70000,'salary','K4A0M4');

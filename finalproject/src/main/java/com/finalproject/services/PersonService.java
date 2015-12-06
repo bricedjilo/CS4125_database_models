@@ -1,6 +1,8 @@
 package com.finalproject.services;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -20,8 +22,18 @@ public class PersonService {
 		this.personDao = personDao;
 	}
 	
-	public void create(Person person) {
-		personDao.create(person);
+	public List<Map<String,String>> create(Person person) {
+		try {
+			personDao.create(person);
+			return personDao.getRecentlyCreatedPerson();
+		} catch (Exception e) {
+			List<Map<String,String>> list = new ArrayList<>();
+			Map<String, String>map = new HashMap<>();
+			map.put("error","Person was not created. The database could not be accessed");
+			list.add(map);
+			return list;
+		}
+		
 	}
 
 	public List<Map<String,String>> getAllEmployees() {
@@ -87,6 +99,15 @@ public class PersonService {
 			return personDao.getAEmployeeByNames(employeeName);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+	}
+
+	public List<Map<String, String>> getAEmployeeById(int id) {
+		try {
+			return personDao.getAEmployeeById(id);
+		} catch (SQLException e) {
 			e.printStackTrace();
 			return null;
 		}

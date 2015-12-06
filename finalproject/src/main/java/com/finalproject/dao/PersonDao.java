@@ -52,7 +52,7 @@ public class PersonDao {
 		params.addValue("gender", person.getGender());
 		jdbc.update(SQL, params);
 	}
-	
+
 	// Delete person
 	public void delete(int per_id) {
 		String SQL = "DELETE FROM Person WHERE per_id = :per_id";
@@ -66,13 +66,21 @@ public class PersonDao {
 		return factories.daoBoilerPlate(jdbc, sql, null, "per_id", "name", "email", "gender", "phone_number",
 				"phone_type", "street", "city", "zip_code", "state");
 	}
-	
+
 	// Get Employees BY NAME
 	public List<Map<String, String>> getAEmployeeByNames(String employeeName) throws SQLException {
 		MapSqlParameterSource params = new MapSqlParameterSource();
 		params.addValue("employeeName", factories.surroundWithPercent(employeeName));
-		String sql = "select per_id, name from person WHERE LOWER(name) LIKE :employeeName";
-		return factories.daoBoilerPlate(jdbc, sql, params, "per_id", "name");
+		String sql = "select per_id, name, gender from person WHERE LOWER(name) LIKE :employeeName";
+		return factories.daoBoilerPlate(jdbc, sql, params, "per_id", "name", "gender");
+	}
+
+	// Get employee by Id
+	public List<Map<String, String>> getAEmployeeById(int id) throws SQLException {
+		MapSqlParameterSource params = new MapSqlParameterSource();
+		params.addValue("id", id);
+		String sql = "Select * from person Where per_id = :id";
+		return factories.daoBoilerPlate(jdbc, sql, params, "per_id", "name", "gender");
 	}
 
 	// Query 1
@@ -121,6 +129,10 @@ public class PersonDao {
 		return factories.daoBoilerPlate(jdbc, sql, params, "per_id", "name", "comp_id", "title", "project_id");
 	}
 
-	
+	// Recently created person
+	public List<Map<String, String>> getRecentlyCreatedPerson() throws SQLException {
+		String sql = "select * from person where person.per_id = (select Max(person.per_id) from person)";
+		return factories.daoBoilerPlate(jdbc, sql, null, "per_id", "name", "gender");
+	}
 
 }

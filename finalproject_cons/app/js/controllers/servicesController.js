@@ -4,6 +4,6 @@ dbApp.controller('ServicesController', function ServicesController(servicesServi
     
     $scope.services = servicesService.getServices;
     
-});
+}); 
 
 

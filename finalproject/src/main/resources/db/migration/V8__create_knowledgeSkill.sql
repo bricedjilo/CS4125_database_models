@@ -13,6 +13,9 @@ CREATE TABLE knowledgeSkill (
   PRIMARY KEY(ks_code)
 );
 
+
+
+
 INSERT INTO knowledgeSkill (ks_code,title,description,skill_level) VALUES ('COM2001','Effective Technical Writing',
 'Create a full range of technical documents with solid structures 
 Use templates to quickly start the writing process 
